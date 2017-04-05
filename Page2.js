@@ -1,3 +1,4 @@
+
 /**
  * Created by Nastya on 31.03.2017.
  */
@@ -7,16 +8,16 @@ function saveFieldsPage1(){
     saveExamFields();
     saveStudentsFields();
     saveStudentReportsFields();
-    // savePhDThesesFields();
+    savePhDThesesFields();
 
 }
 
 function constructFields() {
-    constructCourseFields()
+    constructCourseFields();
     constructExamFields();
     constructStudentsFields();
     constructStudentReportsFields();
-    // constructPhDThesesFields();
+    constructPhDThesesFields();
 }
 
 function saveCourseFields() {
@@ -48,6 +49,17 @@ function saveStudentReportsFields() {
     for (var i = 1; i < (parseInt(localStorage.page1_id4)); i++) {
         localStorage.setItem("reportStudentName"+i, document.getElementById("reportStudentName"+i).value);
         localStorage.setItem("reportTitle"+i, document.getElementById("reportTitle"+i).value);
+    }
+}
+
+function savePhDThesesFields() {
+    for (var i = 1; i < (parseInt(localStorage.page1_id5)); i++) {
+        localStorage.setItem("PhDThesesStudentName"+i, document.getElementById("PhDThesesStudentName"+i).value);
+        localStorage.setItem("PhDThesesDegree"+i, document.getElementById("PhDThesesDegree"+i).value);
+        localStorage.setItem("PhDThesesSupervisorName"+i, document.getElementById("PhDThesesSupervisorName"+i).value);
+        localStorage.setItem("PhDThesesCommitteeNames"+i, document.getElementById("PhDThesesCommitteeNames"+i).value);
+        localStorage.setItem("PhDThesesInstitutionName"+i, document.getElementById("PhDThesesInstitutionName"+i).value);
+        localStorage.setItem("PhDThesesTitle"+i, document.getElementById("PhDThesesTitle"+i).value);
     }
 }
 
@@ -111,6 +123,28 @@ function constructStudentReportsFields() {
             $(wrapper4).append('<div><p>Student name:</p><input type="text"  name="reportStudentName'+i+'" id="reportStudentName'+i+'" size="40"> <p>Title:</p><input type="text"  name="reportTitle'+i+'" id="reportTitle'+i+'" size="40"></div>');
             $("#reportStudentName" + i).val(localStorage.getItem("reportStudentName" + i));
             $("#reportTitle" + i).val(localStorage.getItem("reportTitle" + i));
+        }
+    }
+}
+
+function constructPhDThesesFields() {
+    var wrapper5 = $(".input-fields-wrap5");
+    for (var i = 1; i < (parseInt(localStorage.page1_id5)); i++) {
+        if (i == 1) {
+            $("#PhDThesesStudentName1").val(localStorage.getItem("PhDThesesStudentName1"));
+            $("#PhDThesesDegree1").val(localStorage.getItem("PhDThesesDegree"));
+            $("#PhDThesesSupervisorName1").val(localStorage.getItem("PhDThesesSupervisorName1"));
+            $("#PhDThesesCommitteeNames1").val(localStorage.getItem("PhDThesesCommitteeNames1"));
+            $("#PhDThesesInstitutionName1").val(localStorage.getItem("PhDThesesInstitutionName1"));
+            $("#PhDThesesTitle1").val(localStorage.getItem("PhDThesesTitle1"));
+        } else {
+            $(wrapper5).append('<div><p>Student name:</p><input type="text"  name="PhDThesesStudentName'+i+'" id="PhDThesesStudentName'+i+'" size="40"> <p>Degree:</p><input type="text"  name="PhDThesesDegree'+i+'" id="PhDThesesDegree'+i+'" size="40"> <p>Name of supervisor:</p><input type="text"  name="PhDThesesSupervisorName'+i+'" id="PhDThesesSupervisorName'+i+'" size="40"> <p>Names of other comittee members:</p><input type="text"  name="PhDThesesCommitteeNames'+i+'" id="PhDThesesCommitteeNames'+i+'" size="40"> <p>Name of institution:</p><input type="text"  name="PhDThesesInstitutionName'+i+'" id="PhDThesesInstitutionName'+i+'" size="40"> <p>Title:</p><input type="text"  name="PhDThesesTitle'+i+'" id="PhDThesesTitle'+i+'" size="40"></div>');
+            $("#PhDThesesStudentName" + i).val(localStorage.getItem("PhDThesesStudentName" + i));
+            $("#PhDThesesDegree" + i).val(localStorage.getItem("PhDThesesDegree" + i));
+            $("#PhDThesesSupervisorName" + i).val(localStorage.getItem("PhDThesesSupervisorName" + i));
+            $("#PhDThesesCommitteeNames" + i).val(localStorage.getItem("PhDThesesCommitteeNames" + i));
+            $("#PhDThesesInstitutionName" + i).val(localStorage.getItem("PhDThesesInstitutionName" + i));
+            $("#PhDThesesTitle" + i).val(localStorage.getItem("PhDThesesTitle" + i));
         }
     }
 }
@@ -213,7 +247,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x5 < max_fields){
             x5++;
-            $(wrapper5).append('<div><p>Student name:</p><input type="text"  name="studentName[]" size="40"> <p>Degree:</p><input type="text"  name="title[]" size="40"> <p>Name of supervisor:</p><input type="text"  name="title[]" size="40"> <p>Names of other comittee members:</p><input type="text"  name="title[]" size="40"> <p>Name of institution:</p><input type="text"  name="title[]" size="40"> <p>Title:</p><input type="text"  name="title[]" size="40"></div>');
+            $(wrapper5).append('<div><p>Student name:</p><input type="text"  name="PhDThesesStudentName'+localStorage.page1_id5+'" id="PhDThesesStudentName'+localStorage.page1_id5+'" size="40"> <p>Degree:</p><input type="text"  name="PhDThesesDegree'+localStorage.page1_id5+'" id="PhDThesesDegree'+localStorage.page1_id5+'" size="40"> <p>Name of supervisor:</p><input type="text"  name="PhDThesesSupervisorName'+localStorage.page1_id5+'" id="PhDThesesSupervisorName'+localStorage.page1_id5+'" size="40"> <p>Names of other comittee members:</p><input type="text"  name="PhDThesesCommitteeNames'+localStorage.page1_id5+'" id="PhDThesesCommitteeNames'+localStorage.page1_id5+'" size="40"> <p>Name of institution:</p><input type="text"  name="PhDThesesInstitutionName'+localStorage.page1_id5+'" id="PhDThesesInstitutionName'+localStorage.page1_id5+'" size="40"> <p>Title:</p><input type="text"  name="PhDThesesTitle'+localStorage.page1_id5+'" id="PhDThesesTitle'+localStorage.page1_id5+'" size="40"></div>');
             localStorage.page1_id5 = (parseInt(localStorage.page1_id5)) + 1;
         }
     });
