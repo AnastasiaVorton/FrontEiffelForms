@@ -9,16 +9,16 @@ function loadFieldsPage1() {
 }
 
 function saveFieldsPage1() {
-    localStorage.unitName = document.getElementById("unitName").value
-    localStorage.headName = document.getElementById("headName").value
-    localStorage.startDate = document.getElementById("startDate").value
+    localStorage.unitName = document.getElementById("unitName").value;
+    localStorage.headName = document.getElementById("headName").value;
+    localStorage.startDate = document.getElementById("startDate").value;
     localStorage.endDate = document.getElementById("endDate").value
 }
 
 $(document).ready(function () {
-    if ( $('#startDate').type != 'date' ) $('#startDate').datepicker();
     loadFieldsPage1();
     $("#js-next-button").on("click", function () {
+        alert($("#myForm").serialize());
         saveFieldsPage1();
         $.ajax({
             type: "POST",
@@ -28,15 +28,16 @@ $(document).ready(function () {
             }
         });
     });
-    $("#js-back-button").on("click", function () {
-        saveFieldsPage1()
-        $.ajax({
-            type: "POST",
-            url: "WelcomePage.html",
-            data: ($("#myForm").serialize()),
-            success: function (html) {
-                $("#container-main-field").html(html);
-            }
-        });
-    });
+    // $("#js-back-button").on("click", function () {
+    //     alert($("myForm").serialize());
+    //     saveFieldsPage1();
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "WelcomePage.html",
+    //         data: ($("#myForm").serialize()),
+    //         success: function (html) {
+    //             $("#container-main-field").html(html);
+    //         }
+    //     });
+    // });
 });

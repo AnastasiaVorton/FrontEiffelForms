@@ -6,7 +6,7 @@ function saveFieldsPage1(){
     saveCourseFields();
     saveExamFields();
     saveStudentsFields();
-    // saveStudentReportsFields();
+    saveStudentReportsFields();
     // savePhDThesesFields();
 
 }
@@ -15,7 +15,7 @@ function constructFields() {
     constructCourseFields()
     constructExamFields();
     constructStudentsFields();
-    // constructStudentReportsFields();
+    constructStudentReportsFields();
     // constructPhDThesesFields();
 }
 
@@ -41,6 +41,13 @@ function saveStudentsFields() {
     for (var i = 1; i < (parseInt(localStorage.page1_id3)); i++) {
         localStorage.setItem("supervisedStudentName"+i, document.getElementById("supervisedStudentName"+i).value);
         localStorage.setItem("natureOfWork"+i, document.getElementById("natureOfWork"+i).value);
+    }
+}
+
+function saveStudentReportsFields() {
+    for (var i = 1; i < (parseInt(localStorage.page1_id4)); i++) {
+        localStorage.setItem("reportStudentName"+i, document.getElementById("reportStudentName"+i).value);
+        localStorage.setItem("reportTitle"+i, document.getElementById("reportTitle"+i).value);
     }
 }
 
@@ -94,6 +101,20 @@ function constructStudentsFields() {
     }
 }
 
+function constructStudentReportsFields() {
+    var wrapper4 = $(".input-fields-wrap4");
+    for (var i = 1; i < (parseInt(localStorage.page1_id4)); i++) {
+        if (i == 1) {
+            $("#reportStudentName1").val(localStorage.getItem("reportStudentName1"));
+            $("#reportTitle1").val(localStorage.getItem("reportTitle1"));
+        } else {
+            $(wrapper4).append('<div><p>Student name:</p><input type="text"  name="reportStudentName'+i+'" id="reportStudentName'+i+'" size="40"> <p>Title:</p><input type="text"  name="reportTitle'+i+'" id="reportTitle'+i+'" size="40"></div>');
+            $("#reportStudentName" + i).val(localStorage.getItem("reportStudentName" + i));
+            $("#reportTitle" + i).val(localStorage.getItem("reportTitle" + i));
+        }
+    }
+}
+
 $(document).ready(function () {
     if (localStorage.getItem("page1_id1") == null) {
         localStorage.page1_id1 = 2;
@@ -123,7 +144,7 @@ $(document).ready(function () {
     });
 
     $("#js-back-button").on("click", function () {
-
+        alert($("#myForm").serialize());
         saveFieldsPage1();
         $.ajax({
             type: "POST",
@@ -182,7 +203,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x4 < max_fields){
             x4++;
-            $(wrapper4).append('<div><p>Student name:</p><input type="text"  name="studentName[]" size="40"> <p>Title:</p><input type="text"  name="title[]" size="40"></div>');
+            $(wrapper4).append('<div><p>Student name:</p><input type="text"  name="reportStudentName'+localStorage.page1_id4+'" id="reportStudentName'+localStorage.page1_id4+'" size="40"> <p>Title:</p><input type="text"  name="reportTitle'+localStorage.page1_id4+'" id="reportTitle'+localStorage.page1_id4+'" size="40"></div>');
             localStorage.page1_id4 = (parseInt(localStorage.page1_id4)) + 1;
         }
     });
