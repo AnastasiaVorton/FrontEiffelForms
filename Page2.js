@@ -178,7 +178,6 @@ $(document).ready(function () {
     });
 
     $("#js-back-button").on("click", function () {
-        alert($("#myForm").serialize());
         saveFieldsPage1();
         $.ajax({
             type: "POST",
@@ -228,7 +227,6 @@ $(document).ready(function () {
             x3++;
             $(wrapper3).append('<div><p>Student name:</p><input type="text"  name="supervisedStudentName'+localStorage.page1_id3+'" id="supervisedStudentName'+localStorage.page1_id3+'" size="40"><p>Nature of work:</p><input type="text" name="natureOfWork'+localStorage.page1_id3+'" id="natureOfWork'+localStorage.page1_id3+'" size="40"></div>');
             localStorage.page1_id3 = (parseInt(localStorage.page1_id3)) + 1;
-            alert(localStorage.page1_id3);
         }
     });
 

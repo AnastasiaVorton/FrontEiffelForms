@@ -18,7 +18,6 @@ function saveFieldsPage1() {
 $(document).ready(function () {
     loadFieldsPage1();
     $("#js-next-button").on("click", function () {
-        alert($("#myForm").serialize());
         saveFieldsPage1();
         $.ajax({
             type: "POST",
@@ -29,7 +28,7 @@ $(document).ready(function () {
         });
     });
     // $("#js-back-button").on("click", function () {
-    //     alert($("myForm").serialize());
+    //
     //     saveFieldsPage1();
     //     $.ajax({
     //         type: "POST",
