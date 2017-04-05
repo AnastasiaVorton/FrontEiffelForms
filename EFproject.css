@@ -1,0 +1,101 @@
+body {
+    background-color: #b3e5fc;
+}
+
+.intro-text {
+    font-size: 22px;
+}
+
+h1 {
+    margin-top: 4%;
+    margin-left: 12%;
+    font-size: 40px;
+    font-weight: 100;
+    /*font-family: "Avenir Next";*/
+    font-family: 'Josefin Sans', sans-serif;
+    color: #757575;
+    border-bottom: 1px solid ;
+    /*text-decoration: underline;*/
+    /*text-decoration-style: solid;*/
+}
+
+.fields{
+    position: absolute;
+}
+
+fieldset {
+    background-color: #fffdff;
+    border: hidden;
+    /*margin-left: inherit;*/
+    /*margin-right: inherit;*/
+    /*font-family: "Avenir Next";*/
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+    color: #757575;
+}
+
+input {
+    /*font-family: "Avenir Next";*/
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #fffdff;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-bottom-color: #757575;
+    width: 100%;
+    padding-bottom: 8px;
+}
+
+button {
+    font-size: 15px;
+    background-color: transparent;
+    border: 1px solid;
+    /*font-family: "Avenir Next";*/
+    font-family: 'Josefin Sans', sans-serif;
+    color: #757575;
+    padding: 16px;
+}
+
+.next-button:hover, .back-button:hover, .add-field-button1:hover,.add-field-button2:hover, .add-field-button3:hover,
+.add-field-button4:hover, .add-field-button5:hover {
+    /*box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.12), 0 9px 25px 0 rgba(0, 0, 0, 0.10);*/
+    box-shadow: 5px 5px #757575
+}
+
+.page-footer {
+    text-align: center;
+    /*font-family: "Avenir Next";*/
+    font-family: 'Josefin Sans', sans-serif;
+    color: #757575;
+}
+
+.container-main-field {
+    padding: 30px;
+    position: relative;
+    background-color: #fffdff;
+    margin-left: 11%;
+    margin-right: 11%;
+    /*font-family: "Avenir Next";*/
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+    color: #757575;
+    box-shadow: 10px 10px #757575
+}
+
+.obligatory-sign {
+    color: red;
+}
+
+.field-info {
+    font-size: 14px;
+}
+
+.section-info {
+    font-size: 20px;
+}
+
+.back-button, .next-button {
+    display: inline-block;
+}

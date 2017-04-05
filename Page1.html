@@ -1,0 +1,27 @@
+<style>@import "EFproject.css";</style>
+<div class="section_name">
+    <h2>Section 1</h2>
+    <div class="section-info"><p>General information about the unit. Don't forget to fill in the obligatory fields.
+        (<sup class="obligatory-sign">*</sup>)</p></div>
+</div>
+<fieldset>
+    <form id="myForm">
+        <h4 class="field-name">Name of the unit<sup class="obligatory-sign">*</sup>
+            <div class="field-info"><p>Official name, for example laboratory name</p></div>
+        </h4>
+        <input type="text" name="unitName" id="unitName" size="40"><br>
+        <h4 class="field-name">Name of the head of the unit<sup class="obligatory-sign">*</sup></h4>
+        <input type="text" name="headName" id="headName" size="40"><br>
+        <h4 class="field-name">Start of reporting period(if other than 01.01.2017)</h4>
+        <input type="date" name="startDate" id="startDate" size="40"><br>
+        <h4 class="field-name">End of reporting period (if other than 31.12.2017)</h4>
+        <input type="date" name="endDate" id="endDate" size="40"><br>
+    </form>
+</fieldset>
+<div class="container-buttons">
+    <div class="next-button" id="js-next-button">
+        <button>Next</button>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script src="Page1.js"></script>
