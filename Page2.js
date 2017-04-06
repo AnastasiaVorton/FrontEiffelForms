@@ -72,7 +72,7 @@ function constructCourseFields() {
             $("#level1").val(localStorage.getItem("level1"));
             $("#num-students1").val(localStorage.getItem("num-students1"));
         } else {
-            $(wrapper1).append('<div><p>Course name:</p><input type="text" name="courseName' + i + '" id="courseName' + i + '"/><p>Semester:</p><input type="text" name="semester' + i + '" id="semester' + i + '"/> <p>Level:</p><input type="text" name="level' + i + '" id="level' + i + '"/> <p>Number of students:</p><input type="number" name="num-students' + i + '" id="num-students' + i + '"/></div>');
+            $(wrapper1).append('<div><p>Course name:</p><input type="text" name="courseName' + i + '" id="courseName' + i + '"/><p>Semester:</p><input type="text" name="semester' + i + '" id="semester' + i + '"/> <p>Level:</p><input type="text" name="level' + i + '" id="level' + i + '"/> <p>Number of students:</p><input type="number" name="num-students' + i + '" id="num-students' + i + '"/><hr></div>');
             $("#courseName" + i).val(localStorage.getItem("courseName" + i));
             $("#semester" + i).val(localStorage.getItem("semester" + i));
             $("#level" + i).val(localStorage.getItem("level" + i));
@@ -205,7 +205,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x1 < max_fields){
             x1++;
-            $(wrapper1).append('<div><p>Course name:</p><input type="text" name="courseName'+localStorage.page1_id1+'" id="courseName'+localStorage.page1_id1+'"/><p>Semester:</p><input type="text" name="semester'+localStorage.page1_id1+'" id="semester'+localStorage.page1_id1+'"/> <p>Level:</p><input type="text" name="level'+localStorage.page1_id1+'" id="level'+localStorage.page1_id1+'"/> <p>Number of students:</p><input type="number" name="num-students'+localStorage.page1_id1+'" id="num-students'+localStorage.page1_id1+'"/></div>');
+            $(wrapper1).append('<div><hr><p>Course name:</p><input type="text" name="courseName'+localStorage.page1_id1+'" id="courseName'+localStorage.page1_id1+'"/><p>Semester:</p><input type="text" name="semester'+localStorage.page1_id1+'" id="semester'+localStorage.page1_id1+'"/> <p>Level:</p><input type="text" name="level'+localStorage.page1_id1+'" id="level'+localStorage.page1_id1+'"/> <p>Number of students:</p><input type="number" name="num-students'+localStorage.page1_id1+'" id="num-students'+localStorage.page1_id1+'"/></div>');
             localStorage.page1_id1 = (parseInt(localStorage.page1_id1)) + 1;
         }
     });
@@ -215,7 +215,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x2 < max_fields){
             x2++;
-            $(wrapper2).append('<div><p>Course name:</p><input type="text"  name="courseNameExam'+localStorage.page1_id2+'" id="courseNameExam'+localStorage.page1_id2+'" size="40"><p>Semester:</p><input type="text" name="semesterExam'+localStorage.page1_id2+'" id="semesterExam'+localStorage.page1_id2+'" size="40"><p>Kind of exam:</p><input type="text" name="kindOfExam'+localStorage.page1_id2+'" id="kindOfExam'+localStorage.page1_id2+'" size="40"> <p>Number of students:</p><input type="number" name="num-studentsExam'+localStorage.page1_id2+'" id="num-studentsExam'+localStorage.page1_id2+'" size="30"></div>');
+            $(wrapper2).append('<div><hr><p>Course name:</p><input type="text"  name="courseNameExam'+localStorage.page1_id2+'" id="courseNameExam'+localStorage.page1_id2+'" size="40"><p>Semester:</p><input type="text" name="semesterExam'+localStorage.page1_id2+'" id="semesterExam'+localStorage.page1_id2+'" size="40"><p>Kind of exam:</p><input type="text" name="kindOfExam'+localStorage.page1_id2+'" id="kindOfExam'+localStorage.page1_id2+'" size="40"> <p>Number of students:</p><input type="number" name="num-studentsExam'+localStorage.page1_id2+'" id="num-studentsExam'+localStorage.page1_id2+'" size="30"></div>');
             localStorage.page1_id2 = (parseInt(localStorage.page1_id2)) + 1;
         }
     });
@@ -225,7 +225,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x3 < max_fields){
             x3++;
-            $(wrapper3).append('<div><p>Student name:</p><input type="text"  name="supervisedStudentName'+localStorage.page1_id3+'" id="supervisedStudentName'+localStorage.page1_id3+'" size="40"><p>Nature of work:</p><input type="text" name="natureOfWork'+localStorage.page1_id3+'" id="natureOfWork'+localStorage.page1_id3+'" size="40"></div>');
+            $(wrapper3).append('<div><hr><p>Student name:</p><input type="text"  name="supervisedStudentName'+localStorage.page1_id3+'" id="supervisedStudentName'+localStorage.page1_id3+'" size="40"><p>Nature of work:</p><input type="text" name="natureOfWork'+localStorage.page1_id3+'" id="natureOfWork'+localStorage.page1_id3+'" size="40"></div>');
             localStorage.page1_id3 = (parseInt(localStorage.page1_id3)) + 1;
         }
     });
@@ -235,7 +235,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x4 < max_fields){
             x4++;
-            $(wrapper4).append('<div><p>Student name:</p><input type="text"  name="reportStudentName'+localStorage.page1_id4+'" id="reportStudentName'+localStorage.page1_id4+'" size="40"> <p>Title:</p><input type="text"  name="reportTitle'+localStorage.page1_id4+'" id="reportTitle'+localStorage.page1_id4+'" size="40"></div>');
+            $(wrapper4).append('<div><hr><p>Student name:</p><input type="text"  name="reportStudentName'+localStorage.page1_id4+'" id="reportStudentName'+localStorage.page1_id4+'" size="40"> <p>Title:</p><input type="text"  name="reportTitle'+localStorage.page1_id4+'" id="reportTitle'+localStorage.page1_id4+'" size="40"></div>');
             localStorage.page1_id4 = (parseInt(localStorage.page1_id4)) + 1;
         }
     });
@@ -245,7 +245,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x5 < max_fields){
             x5++;
-            $(wrapper5).append('<div><p>Student name:</p><input type="text"  name="PhDThesesStudentName'+localStorage.page1_id5+'" id="PhDThesesStudentName'+localStorage.page1_id5+'" size="40"> <p>Degree:</p><input type="text"  name="PhDThesesDegree'+localStorage.page1_id5+'" id="PhDThesesDegree'+localStorage.page1_id5+'" size="40"> <p>Name of supervisor:</p><input type="text"  name="PhDThesesSupervisorName'+localStorage.page1_id5+'" id="PhDThesesSupervisorName'+localStorage.page1_id5+'" size="40"> <p>Names of other comittee members:</p><input type="text"  name="PhDThesesCommitteeNames'+localStorage.page1_id5+'" id="PhDThesesCommitteeNames'+localStorage.page1_id5+'" size="40"> <p>Name of institution:</p><input type="text"  name="PhDThesesInstitutionName'+localStorage.page1_id5+'" id="PhDThesesInstitutionName'+localStorage.page1_id5+'" size="40"> <p>Title:</p><input type="text"  name="PhDThesesTitle'+localStorage.page1_id5+'" id="PhDThesesTitle'+localStorage.page1_id5+'" size="40"></div>');
+            $(wrapper5).append('<div><hr><p>Student name:</p><input type="text"  name="PhDThesesStudentName'+localStorage.page1_id5+'" id="PhDThesesStudentName'+localStorage.page1_id5+'" size="40"> <p>Degree:</p><input type="text"  name="PhDThesesDegree'+localStorage.page1_id5+'" id="PhDThesesDegree'+localStorage.page1_id5+'" size="40"> <p>Name of supervisor:</p><input type="text"  name="PhDThesesSupervisorName'+localStorage.page1_id5+'" id="PhDThesesSupervisorName'+localStorage.page1_id5+'" size="40"> <p>Names of other comittee members:</p><input type="text"  name="PhDThesesCommitteeNames'+localStorage.page1_id5+'" id="PhDThesesCommitteeNames'+localStorage.page1_id5+'" size="40"> <p>Name of institution:</p><input type="text"  name="PhDThesesInstitutionName'+localStorage.page1_id5+'" id="PhDThesesInstitutionName'+localStorage.page1_id5+'" size="40"> <p>Title:</p><input type="text"  name="PhDThesesTitle'+localStorage.page1_id5+'" id="PhDThesesTitle'+localStorage.page1_id5+'" size="40"></div>');
             localStorage.page1_id5 = (parseInt(localStorage.page1_id5)) + 1;
         }
     });
