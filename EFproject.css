@@ -90,7 +90,6 @@ button {
 
 .page-footer {
     text-align: center;
-    /*font-family: "Avenir Next";*/
     font-family: 'Josefin Sans', sans-serif;
     color: #757575;
 }
@@ -101,7 +100,6 @@ button {
     background-color: #fffdff;
     margin-left: 11%;
     margin-right: 11%;
-    /*font-family: "Avenir Next";*/
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
     color: #757575;

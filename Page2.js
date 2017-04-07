@@ -9,7 +9,6 @@ function saveFieldsPage1(){
     saveStudentsFields();
     saveStudentReportsFields();
     savePhDThesesFields();
-
 }
 
 function constructFields() {

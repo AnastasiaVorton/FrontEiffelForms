@@ -4,7 +4,7 @@
     <div class="section-info"><p>Covers research and publication activities of the unit</p>
     </div>
     <fieldset>
-        <form>
+        <form id="form2">
             <h4 class="field-name">Grants<sup class="obligatory-sign">*</sup>
                 <div class="field-info">
                     <p>
@@ -12,26 +12,66 @@
                     </p>
                 </div>
             </h4>
-            <input type="text" size="40"><br>
+            <div class="grants-wrap">
+                <div>
+                    <p>Title:</p><input type="text" name="title1" id="title1" size="40">
+                    <p>Granting agency:</p><input type="text" name="agency1" id="agency1" size="40">
+                    <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="text" name="period1" id="period1"
+                                                                           size="40">
+                    <p>Amount:</p><input type="number" name="amount1" id="amount1" size="40">
+                </div>
+            </div>
+            <button class="add-field-button1">Add new</button>
             <h4 class="field-name">Research projects<sup class="obligatory-sign">*</sup></h4>
-            <div class="field-info"><p>Include all significant research themes in which membersof your unit were involved.
+            <div class="field-info"><p>Include all significant research themes in which members of your unit were
+                involved.
                 For each list: title of a project, Innopolis University personnel involved, start date of
                 a project, expected end date.</p>
             </div>
-            <input type="text" size="40"><br>
+            <div class="research-projects-wrap">
+                <div>
+                    <p>Title:</p><input type="text" name="proj-title1" id="proj-title1" size="40">
+                    <p>Personnel involved:</p><input type="text" name="personnel1" id="personnel1" size="40">
+                    <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="text" name="dates1" id="dates1"
+                                                                           size="40">
+                </div>
+            </div>
+            <button class="add-field-button2">Add new</button>
             <h4 class="field-name">Research collaborations</h4>
-            <div class="field-info"><p>For each indicate: country of institution, name of institution,
-            name og=f principal contract, nature of collaboration.</p></div>
-            <input type="text" size="40"><br>
+            <div class="field-info">
+                <p>For each indicate: country of institution, name of institution,
+                    name of principal contact, nature of collaboration.
+                </p>
+            </div>
+            <div class="collaborations-wrap">
+                <div>
+                    <p>Country:</p><input type="text" name="country1" id="country1" size="40">
+                    <p>Name of institution:</p><input type="text" name="name1" id="name1" size="40">
+                    <p>Name of principal contact</p><input type="text" name="name-of-principal1" id="name-of-principal1" size="40">
+                    <p>Nature:</p><input type="number" name="nature1" id="nature1" size="40">
+                </div>
+            </div>
+            <button class="add-field-button3">Add new</button>
             <h4 class="field-name">Conference publications</h4>
-            <div class="field-info"><p>For each student indicate all publications of whichmembers of the unit
+            <div class="field-info"><p>For each student indicate all publications of which members of the unit
                 are authors or co-authors.</p>
             </div>
-            <input type="text" size="40"><br>
+            <div class="conference-publications-wrap">
+                <div>
+                    <p>Name of the student:</p><input type="text" name="stud-name1" id="stud-name1" size="40">
+                    <p>Publications:</p><input type="text" name="publications1" id="publications1" size="40">
+                </div>
+            </div>
+            <button class="add-field-button4">Add new</button>
             <h4 class="field-name">Journal publications</h4>
             <div class="field-info"><p>Indicate all publications of which members of the unit are authors ot co-authors.
             </p></div>
-            <input type="text" size="40"><br>
+            <div class="journal-publications-wrap">
+                <div>
+                    <p>Publications:</p><input type="text" name="journal-publications1" id="journal-publications1" size="40">
+                </div>
+            </div>
+            <button class="add-field-button5">Add new</button>
         </form>
     </fieldset>
     <div class="container-buttons">
