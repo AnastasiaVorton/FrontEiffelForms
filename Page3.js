@@ -135,41 +135,103 @@ function constructJournalPublicationsFields() {
     }
 }
 
-    $(document).ready(function () {
-        if (localStorage.getItem("page1_id1") == null) {
-            localStorage.page1_id1 = 2;
-        }
-        if (localStorage.page1_id2 == null) {
-            localStorage.page1_id2 = 2;
-        }
-        if (localStorage.page1_id3 == null) {
-            localStorage.page1_id3 = 2;
-        }
-        if (localStorage.page1_id4 == null) {
-            localStorage.page1_id4 = 2;
-        }
-        if (localStorage.page1_id5 == null) {
-            localStorage.page1_id5 = 2;
-        }
-        constructFields();
-        $("#js-next-button").on("click", function (e) {
-            $.ajax({
-                type: "POST",
-                url: "Page4.html",
-                success: function (html) {
-                    $("#container-main-field").html(html);
-                }
-            });
-        });
-
-        $("#js-back-button").on("click", function () {
-            saveFieldsPage3();
-            $.ajax({
-                type: "POST",
-                url: "Page2.html",
-                success: function (html) {
-                    $("#container-main-field").html(html);
-                }
-            });
+$(document).ready(function () {
+    if (localStorage.getItem("page1_id1") == null) {
+        localStorage.page1_id1 = 2;
+    }
+    if (localStorage.page1_id2 == null) {
+        localStorage.page1_id2 = 2;
+    }
+    if (localStorage.page1_id3 == null) {
+        localStorage.page1_id3 = 2;
+    }
+    if (localStorage.page1_id4 == null) {
+        localStorage.page1_id4 = 2;
+    }
+    if (localStorage.page1_id5 == null) {
+        localStorage.page1_id5 = 2;
+    }
+    constructFields();
+    $("#js-next-button").on("click", function (e) {
+        $.ajax({
+            type: "POST",
+            url: "Page4.html",
+            success: function (html) {
+                $("#container-main-field").html(html);
+            }
         });
     });
+
+    $("#js-back-button").on("click", function () {
+        saveFieldsPage3();
+        $.ajax({
+            type: "POST",
+            url: "Page2.html",
+            success: function (html) {
+                $("#container-main-field").html(html);
+            }
+        });
+    });
+
+    var max_fields = 10;
+    var wrapper1 = $(".grants-wrap");
+    var wrapper2 = $(".research-projects-wrap");
+    var wrapper3 = $(".collaborations-wrap");
+    var wrapper4 = $(".conference-publications-wrap");
+    var wrapper5 = $(".journal-publications-wrap");
+    var add_button1 = $(".add-field-button1");
+    var add_button2 = $(".add-field-button2");
+    var add_button3 = $(".add-field-button3");
+    var add_button4 = $(".add-field-button4");
+    var add_button5 = $(".add-field-button5");
+
+    var x1 = 1;
+    $(add_button1).on("click", function (e) {
+        e.preventDefault();
+        if (x1 < max_fields) {
+            x1++;
+            $(wrapper1).append('<div> <p>Title:</p><input type="text" name="title' + localStorage.page1_id1 + '" id="title' + localStorage.page1_id1 + '" size="40"> <p>Granting agency:</p><input type="text" name="agency' + localStorage.page1_id1 + '" id="agency' + localStorage.page1_id1 + '" size="40"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="text" name="period' + localStorage.page1_id1 + '" id="period' + localStorage.page1_id1 + '"size="40"> <p>Amount:</p><input type="number" name="amount' + localStorage.page1_id1 + '" id="amount' + localStorage.page1_id1 + '" size="40"> </div>');
+            localStorage.page1_id1 = (parseInt(localStorage.page1_id1)) + 1;
+        }
+    });
+
+    var x2 = 1;
+    $(add_button2).on("click", function (e) {
+        e.preventDefault();
+        if (x2 < max_fields) {
+            x2++;
+            $(wrapper2.append('<div><p>Title:</p><input type="text" name="proj-title' + localStorage.page1_id2 + '" id="proj-title' + localStorage.page1_id2 + '" size="40"> <p>Personnel involved:</p><input type="text" name="personnel' + localStorage.page1_id2 + '" id="personnel' + localStorage.page1_id2 + '" size="40"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="text" name="dates' + localStorage.page1_id2 + '" id="dates' + localStorage.page1_id2 + '" size="40"> </div>'));
+            localStorage.page1_id2 = (parseInt(localStorage.page1_id2)) + 1;
+        }
+    });
+
+    var x3 = 1;
+    $(add_button3).on("click", function (e) {
+        e.preventDefault();
+        if (x3 < max_fields){
+            x3++;
+            $(wrapper3).append('<div> <p>Country:</p><input type="text" name="country'+localStorage.page1_id3+'"  id="country'+localStorage.page1_id3+'"  size="40"> <p>Name of institution:</p><input type="text" name="name'+localStorage.page1_id3+'"  id="name'+localStorage.page1_id3+'"  size="40"> <p>Name of principal contact</p><input type="text" name="name-of-principal'+localStorage.page1_id3+'"  id="name-of-principal'+localStorage.page1_id3+'"  size="40"> <p>Nature:</p><input type="number" name="nature'+localStorage.page1_id3+'"  id="nature'+localStorage.page1_id3+'"  size="40"> </div>');
+            localStorage.page1_id3 = (parseInt(localStorage.page1_id3)) + 1;
+        }
+    });
+
+    var x4 = 1;
+    $(add_button4).on("click", function (e) {
+        e.preventDefault();
+        if (x4 < max_fields){
+            x4++;
+            $(wrapper4).append('<div> <p>Name of the student:</p><input type="text" name="stud-name'+localStorage.page1_id4+'" id="stud-name'+localStorage.page1_id4+'" size="40"> <p>Publications:</p><input type="text" name="publications'+localStorage.page1_id4+'" id="publications'+localStorage.page1_id4+'" size="40"> </div>');
+            localStorage.page1_id4 = (parseInt(localStorage.page1_id4)) + 1;
+        }
+    });
+
+    var x5 = 1;
+    $(add_button5).on("click", function (e) {
+        e.preventDefault();
+        if (x5 < max_fields){
+            x5++;
+            $(wrapper5).append(' <div> <p>Publications:</p><input type="text" name="journal-publications'+localStorage.page1_id5+'" id="journal-publications'+localStorage.page1_id5+'" size="40"> </div>');
+            localStorage.page1_id5 = (parseInt(localStorage.page1_id5)) + 1;
+        }
+    });
+});
