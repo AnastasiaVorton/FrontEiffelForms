@@ -36,7 +36,7 @@ function saveResearchFields() {
 }
 
 function saveCollaborationsFields() {
-    for (var i = 1; i < (parseInt(localStorage.page1_id3)); i++) {
+    for (var i = 1; i < (parseInt(localStorage.page3_id3)); i++) {
         localStorage.setItem("country" + i, document.getElementById("country" + i).value);
         localStorage.setItem("name" + i, document.getElementById("name" + i).value);
         localStorage.setItem("name-of-principal" + i, document.getElementById("name-of-principal" + i).value);
@@ -45,21 +45,21 @@ function saveCollaborationsFields() {
 }
 
 function saveConferencePublicationsFields() {
-    for (var i = 1; i < (parseInt(localStorage.page1_id4)); i++) {
+    for (var i = 1; i < (parseInt(localStorage.page3_id4)); i++) {
         localStorage.setItem("stud-name" + i, document.getElementById("stud-name" + i).value);
         localStorage.setItem("publications" + i, document.getElementById("publications" + i).value);
     }
 }
 
 function saveJournalPublicationsFields() {
-    for (var i = 1; i < (parseInt(localStorage.page1_id5)); i++) {
+    for (var i = 1; i < (parseInt(localStorage.page3_id5)); i++) {
         localStorage.setItem("journal-publications" + i, document.getElementById("journal-publications" + i).value);
     }
 }
 
 function constructGrantsFields() {
     var wrapper1 = $(".grants-wrap");
-    for (var i = 1; i < (parseInt(localStorage.page1_id1)); i++) {
+    for (var i = 1; i < (parseInt(localStorage.page3_id1)); i++) {
         if (i == 1) {
             $("#title1").val(localStorage.getItem("title1"));
             $("#agency1").val(localStorage.getItem("agency1"));
@@ -77,7 +77,7 @@ function constructGrantsFields() {
 
 function constructResearchFields() {
     var wrapper2 = $(".research-projects-wrap");
-    for (var i = 1; i < (parseInt(localStorage.page1_id2)); i++) {
+    for (var i = 1; i < (parseInt(localStorage.page3_id2)); i++) {
         if (i == 1) {
             $("#proj-title1").val(localStorage.getItem("proj-title1"));
             $("#personnel1").val(localStorage.getItem("personnel1"));
@@ -93,7 +93,7 @@ function constructResearchFields() {
 
 function constructCollaborationsFields() {
     var wrapper3 = $(".collaborations-wrap");
-    for (var i = 1; i < (parseInt(localStorage.page1_id3)); i++) {
+    for (var i = 1; i < (parseInt(localStorage.page3_id3)); i++) {
         if (i == 1) {
             $("#country1").val(localStorage.getItem("country1"));
             $("#name1").val(localStorage.getItem("name1"));
@@ -111,7 +111,7 @@ function constructCollaborationsFields() {
 
 function constructConferencePublicationsFields() {
     var wrapper4 = $(".conference-publications-wrap");
-    for (var i = 1; i < (parseInt(localStorage.page1_id4)); i++) {
+    for (var i = 1; i < (parseInt(localStorage.page3_id4)); i++) {
         if (i == 1) {
             $("#stud-name1").val(localStorage.getItem("stud-name1"));
             $("#publications1").val(localStorage.getItem("publications1"));
@@ -125,7 +125,7 @@ function constructConferencePublicationsFields() {
 
 function constructJournalPublicationsFields() {
     var wrapper5 = $(".journal-publications-wrap");
-    for (var i = 1; i < (parseInt(localStorage.page1_id5)); i++) {
+    for (var i = 1; i < (parseInt(localStorage.page3_id5)); i++) {
         if (i == 1) {
             $("#journal-publications1").val(localStorage.getItem("journal-publications1"));
         } else {
@@ -136,20 +136,20 @@ function constructJournalPublicationsFields() {
 }
 
 $(document).ready(function () {
-    if (localStorage.getItem("page1_id1") == null) {
-        localStorage.page1_id1 = 2;
+    if (localStorage.getItem("page3_id1") == null) {
+        localStorage.page3_id1 = 2;
     }
-    if (localStorage.page1_id2 == null) {
-        localStorage.page1_id2 = 2;
+    if (localStorage.page3_id2 == null) {
+        localStorage.page3_id2 = 2;
     }
-    if (localStorage.page1_id3 == null) {
-        localStorage.page1_id3 = 2;
+    if (localStorage.page3_id3 == null) {
+        localStorage.page3_id3 = 2;
     }
-    if (localStorage.page1_id4 == null) {
-        localStorage.page1_id4 = 2;
+    if (localStorage.page3_id4 == null) {
+        localStorage.page3_id4 = 2;
     }
-    if (localStorage.page1_id5 == null) {
-        localStorage.page1_id5 = 2;
+    if (localStorage.page3_id5 == null) {
+        localStorage.page3_id5 = 2;
     }
     constructFields();
     $("#js-next-button").on("click", function (e) {
@@ -190,8 +190,8 @@ $(document).ready(function () {
         e.preventDefault();
         if (x1 < max_fields) {
             x1++;
-            $(wrapper1).append('<div> <p>Title:</p><input type="text" name="title' + localStorage.page1_id1 + '" id="title' + localStorage.page1_id1 + '" size="40"> <p>Granting agency:</p><input type="text" name="agency' + localStorage.page1_id1 + '" id="agency' + localStorage.page1_id1 + '" size="40"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="text" name="period' + localStorage.page1_id1 + '" id="period' + localStorage.page1_id1 + '"size="40"> <p>Amount:</p><input type="number" name="amount' + localStorage.page1_id1 + '" id="amount' + localStorage.page1_id1 + '" size="40"> </div>');
-            localStorage.page1_id1 = (parseInt(localStorage.page1_id1)) + 1;
+            $(wrapper1).append('<div> <p>Title:</p><input type="text" name="title' + localStorage.page3_id1 + '" id="title' + localStorage.page3_id1 + '" size="40"> <p>Granting agency:</p><input type="text" name="agency' + localStorage.page3_id1 + '" id="agency' + localStorage.page3_id1 + '" size="40"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="text" name="period' + localStorage.page3_id1 + '" id="period' + localStorage.page3_id1 + '"size="40"> <p>Amount:</p><input type="number" name="amount' + localStorage.page3_id1 + '" id="amount' + localStorage.page3_id1 + '" size="40"> </div>');
+            localStorage.page3_id1 = (parseInt(localStorage.page3_id1)) + 1;
         }
     });
 
@@ -200,8 +200,8 @@ $(document).ready(function () {
         e.preventDefault();
         if (x2 < max_fields) {
             x2++;
-            $(wrapper2.append('<div><p>Title:</p><input type="text" name="proj-title' + localStorage.page1_id2 + '" id="proj-title' + localStorage.page1_id2 + '" size="40"> <p>Personnel involved:</p><input type="text" name="personnel' + localStorage.page1_id2 + '" id="personnel' + localStorage.page1_id2 + '" size="40"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="text" name="dates' + localStorage.page1_id2 + '" id="dates' + localStorage.page1_id2 + '" size="40"> </div>'));
-            localStorage.page1_id2 = (parseInt(localStorage.page1_id2)) + 1;
+            $(wrapper2.append('<div><p>Title:</p><input type="text" name="proj-title' + localStorage.page3_id2 + '" id="proj-title' + localStorage.page3_id2 + '" size="40"> <p>Personnel involved:</p><input type="text" name="personnel' + localStorage.page3_id2 + '" id="personnel' + localStorage.page3_id2 + '" size="40"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="text" name="dates' + localStorage.page3_id2 + '" id="dates' + localStorage.page3_id2 + '" size="40"> </div>'));
+            localStorage.page3_id2 = (parseInt(localStorage.page3_id2)) + 1;
         }
     });
 
@@ -210,8 +210,8 @@ $(document).ready(function () {
         e.preventDefault();
         if (x3 < max_fields){
             x3++;
-            $(wrapper3).append('<div> <p>Country:</p><input type="text" name="country'+localStorage.page1_id3+'"  id="country'+localStorage.page1_id3+'"  size="40"> <p>Name of institution:</p><input type="text" name="name'+localStorage.page1_id3+'"  id="name'+localStorage.page1_id3+'"  size="40"> <p>Name of principal contact</p><input type="text" name="name-of-principal'+localStorage.page1_id3+'"  id="name-of-principal'+localStorage.page1_id3+'"  size="40"> <p>Nature:</p><input type="number" name="nature'+localStorage.page1_id3+'"  id="nature'+localStorage.page1_id3+'"  size="40"> </div>');
-            localStorage.page1_id3 = (parseInt(localStorage.page1_id3)) + 1;
+            $(wrapper3).append('<div> <p>Country:</p><input type="text" name="country'+localStorage.page3_id3+'"  id="country'+localStorage.page3_id3+'"  size="40"> <p>Name of institution:</p><input type="text" name="name'+localStorage.page3_id3+'"  id="name'+localStorage.page3_id3+'"  size="40"> <p>Name of principal contact</p><input type="text" name="name-of-principal'+localStorage.page3_id3+'"  id="name-of-principal'+localStorage.page3_id3+'"  size="40"> <p>Nature:</p><input type="number" name="nature'+localStorage.page3_id3+'"  id="nature'+localStorage.page3_id3+'"  size="40"> </div>');
+            localStorage.page3_id3 = (parseInt(localStorage.page3_id3)) + 1;
         }
     });
 
@@ -220,8 +220,8 @@ $(document).ready(function () {
         e.preventDefault();
         if (x4 < max_fields){
             x4++;
-            $(wrapper4).append('<div> <p>Name of the student:</p><input type="text" name="stud-name'+localStorage.page1_id4+'" id="stud-name'+localStorage.page1_id4+'" size="40"> <p>Publications:</p><input type="text" name="publications'+localStorage.page1_id4+'" id="publications'+localStorage.page1_id4+'" size="40"> </div>');
-            localStorage.page1_id4 = (parseInt(localStorage.page1_id4)) + 1;
+            $(wrapper4).append('<div> <p>Name of the student:</p><input type="text" name="stud-name'+localStorage.page3_id4+'" id="stud-name'+localStorage.page3_id4+'" size="40"> <p>Publications:</p><input type="text" name="publications'+localStorage.page3_id4+'" id="publications'+localStorage.page3_id4+'" size="40"> </div>');
+            localStorage.page3_id4 = (parseInt(localStorage.page3_id4)) + 1;
         }
     });
 
@@ -230,8 +230,8 @@ $(document).ready(function () {
         e.preventDefault();
         if (x5 < max_fields){
             x5++;
-            $(wrapper5).append(' <div> <p>Publications:</p><input type="text" name="journal-publications'+localStorage.page1_id5+'" id="journal-publications'+localStorage.page1_id5+'" size="40"> </div>');
-            localStorage.page1_id5 = (parseInt(localStorage.page1_id5)) + 1;
+            $(wrapper5).append(' <div> <p>Publications:</p><input type="text" name="journal-publications'+localStorage.page3_id5+'" id="journal-publications'+localStorage.page3_id5+'" size="40"> </div>');
+            localStorage.page3_id5 = (parseInt(localStorage.page3_id5)) + 1;
         }
     });
 });
