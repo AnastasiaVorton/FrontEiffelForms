@@ -2,6 +2,34 @@ body {
     background-color: #b3e5fc;
 }
 
+.admin{
+    background-color: #fffdff;
+    box-shadow: 10px 10px #757575;
+}
+
+.form{
+    background-color: #fffdff;
+    box-shadow: 10px 10px #757575;
+}
+
+.choose-nav{
+    margin: auto;
+    width: 50%;
+    border: none;
+    padding: 200px 200px 200px 200px;
+    padding-top: 200px;
+}
+
+.admin, .form {
+    text-align: center;
+    font-size: 40px ;
+    display: inline-block;
+    padding: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+    color: #757575;
+}
+
 .intro-text {
     font-size: 22px;
 }
@@ -11,7 +39,6 @@ h1 {
     margin-left: 12%;
     font-size: 40px;
     font-weight: 100;
-    /*font-family: "Avenir Next";*/
     font-family: 'Josefin Sans', sans-serif;
     color: #757575;
     border-bottom: 1px solid ;
@@ -28,14 +55,12 @@ fieldset {
     border: hidden;
     /*margin-left: inherit;*/
     /*margin-right: inherit;*/
-    /*font-family: "Avenir Next";*/
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
     color: #757575;
 }
 
 input {
-    /*font-family: "Avenir Next";*/
     font-family: 'Josefin Sans', sans-serif;
     background-color: #fffdff;
     border-top: transparent;
@@ -52,14 +77,13 @@ button {
     font-size: 15px;
     background-color: transparent;
     border: 1px solid;
-    /*font-family: "Avenir Next";*/
     font-family: 'Josefin Sans', sans-serif;
     color: #757575;
     padding: 16px;
 }
 
 .next-button:hover, .back-button:hover, .add-field-button1:hover,.add-field-button2:hover, .add-field-button3:hover,
-.add-field-button4:hover, .add-field-button5:hover {
+.add-field-button4:hover, .add-field-button5:hover .admin-btn:hover, .form-btn:hover {
     /*box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.12), 0 9px 25px 0 rgba(0, 0, 0, 0.10);*/
     box-shadow: 5px 5px #757575
 }
