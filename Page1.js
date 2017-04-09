@@ -23,6 +23,8 @@ function fieldsIsEmpty() {
 }
 $(document).ready(function () {
     loadFieldsPage1();
+    $("#startDate").val("2016-01-01");
+    $("#endDate").val("2016-12-31");
     $("#js-next-button").on("click", function () {
         saveFieldsPage1();
         if (fieldsIsEmpty()) {
