@@ -13,10 +13,13 @@ body {
 }
 
 .choose-nav{
-    margin: auto;
-    width: 50%;
-    border: none;
-    padding: 200px 200px 200px 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*margin: auto;*/
+    /*width: 50%;*/
+    /*border: none;*/
+    /*padding: 200px 200px 200px 200px;*/
     padding-top: 200px;
 }
 
@@ -83,7 +86,9 @@ button {
 }
 
 .next-button:hover, .back-button:hover, .add-field-button1:hover,.add-field-button2:hover, .add-field-button3:hover,
-.add-field-button4:hover, .add-field-button5:hover .admin-btn:hover, .form-btn:hover {
+.add-field-button4:hover, .admin-btn:hover, .form-btn:hover, .remove_field1:hover,
+.remove_field2:hover, .remove_field3:hover, .remove_field4:hover, .remove_field5:hover, .add-field-button5:hover,
+.submit-button:hover {
     /*box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.12), 0 9px 25px 0 rgba(0, 0, 0, 0.10);*/
     box-shadow: 5px 5px #757575
 }
@@ -120,4 +125,19 @@ button {
 
 .back-button, .next-button {
     display: inline-block;
+}
+
+.submit-button{
+}
+
+.temp-page{
+    background-color: #fffdff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 40px ;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 100;
+    color: #757575;
 }
