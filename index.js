@@ -1,16 +1,14 @@
 /**
- * Created by Nastya on 28.03.2017.
+ * Created by Nastya on 07.04.2017.
  */
-function funSuc(data) {
-    $("#container-main-field").html(data);
-
-}
-
 $(document).ready(function () {
-    $.ajax({
-        type: "POST",
-        url: "WelcomePage.html",
-        dataType: "html",
-        success: funSuc
+    $("#form-btn").on("click", function () {
+        $.ajax({
+            type: "POST",
+            url: "WelcomePage.html",
+            success: function (html) {
+                $("#start").html(html);
+            }
+        });
     });
 });
