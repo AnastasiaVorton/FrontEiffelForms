@@ -3,7 +3,8 @@
  * Created by Nastya on 31.03.2017.
  */
 
-function saveFieldsPage1(){
+function saveFieldsPage2(){
+    localStorage.setItem("formPage2", $("#myForm").serialize());
     saveCourseFields();
     saveExamFields();
     saveStudentsFields();
@@ -18,6 +19,7 @@ function constructFields() {
     constructStudentReportsFields();
     constructPhDThesesFields();
 }
+
 
 function saveCourseFields() {
     for (var i = 1; i < (parseInt(localStorage.page1_id1)); i++) {
@@ -166,7 +168,7 @@ $(document).ready(function () {
     }
     constructFields();
     $("#js-next-button").on("click", function () {
-        saveFieldsPage1();
+        saveFieldsPage2();
         $.ajax({
             type: "POST",
             url: "Page3.html",
@@ -177,7 +179,7 @@ $(document).ready(function () {
     });
 
     $("#js-back-button").on("click", function () {
-        saveFieldsPage1();
+        saveFieldsPage2();
         $.ajax({
             type: "POST",
             url: "Page1.html",
@@ -204,9 +206,15 @@ $(document).ready(function () {
         e.preventDefault();
         if (x1 < max_fields){
             x1++;
-            $(wrapper1).append('<div><hr><p>Course name:</p><input type="text" name="courseName'+localStorage.page1_id1+'" id="courseName'+localStorage.page1_id1+'"/><p>Semester:</p><input type="text" name="semester'+localStorage.page1_id1+'" id="semester'+localStorage.page1_id1+'"/> <p>Level:</p><input type="text" name="level'+localStorage.page1_id1+'" id="level'+localStorage.page1_id1+'"/> <p>Number of students:</p><input type="number" name="num-students'+localStorage.page1_id1+'" id="num-students'+localStorage.page1_id1+'"/></div>');
+            $(wrapper1).append('<div><hr><p>Course name:</p><input type="text" name="courseName'+localStorage.page1_id1+'" id="courseName'+localStorage.page1_id1+'"/><p>Semester:</p><input type="text" name="semester'+localStorage.page1_id1+'" id="semester'+localStorage.page1_id1+'"/> <p>Level:</p><input type="text" name="level'+localStorage.page1_id1+'" id="level'+localStorage.page1_id1+'"/> <p>Number of students:</p><input type="number" name="num-students'+localStorage.page1_id1+'" id="num-students'+localStorage.page1_id1+'"/><button class="remove_field1">Remove</button></div>');
             localStorage.page1_id1 = (parseInt(localStorage.page1_id1)) + 1;
         }
+    });
+
+    $(wrapper1).on("click", ".remove_field1", function (e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x1--;
     });
 
     var x2 = 1;
@@ -214,9 +222,15 @@ $(document).ready(function () {
         e.preventDefault();
         if (x2 < max_fields){
             x2++;
-            $(wrapper2).append('<div><hr><p>Course name:</p><input type="text"  name="courseNameExam'+localStorage.page1_id2+'" id="courseNameExam'+localStorage.page1_id2+'" size="40"><p>Semester:</p><input type="text" name="semesterExam'+localStorage.page1_id2+'" id="semesterExam'+localStorage.page1_id2+'" size="40"><p>Kind of exam:</p><input type="text" name="kindOfExam'+localStorage.page1_id2+'" id="kindOfExam'+localStorage.page1_id2+'" size="40"> <p>Number of students:</p><input type="number" name="num-studentsExam'+localStorage.page1_id2+'" id="num-studentsExam'+localStorage.page1_id2+'" size="30"></div>');
+            $(wrapper2).append('<div><hr><p>Course name:</p><input type="text"  name="courseNameExam'+localStorage.page1_id2+'" id="courseNameExam'+localStorage.page1_id2+'" size="40"><p>Semester:</p><input type="text" name="semesterExam'+localStorage.page1_id2+'" id="semesterExam'+localStorage.page1_id2+'" size="40"><p>Kind of exam:</p><input type="text" name="kindOfExam'+localStorage.page1_id2+'" id="kindOfExam'+localStorage.page1_id2+'" size="40"> <p>Number of students:</p><input type="number" name="num-studentsExam'+localStorage.page1_id2+'" id="num-studentsExam'+localStorage.page1_id2+'" size="30"><button class="remove_field2">Remove</button></div>');
             localStorage.page1_id2 = (parseInt(localStorage.page1_id2)) + 1;
         }
+    });
+
+    $(wrapper2).on("click", ".remove_field2", function (e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x2--;
     });
 
     var x3 = 1;
@@ -224,9 +238,15 @@ $(document).ready(function () {
         e.preventDefault();
         if (x3 < max_fields){
             x3++;
-            $(wrapper3).append('<div><hr><p>Student name:</p><input type="text"  name="supervisedStudentName'+localStorage.page1_id3+'" id="supervisedStudentName'+localStorage.page1_id3+'" size="40"><p>Nature of work:</p><input type="text" name="natureOfWork'+localStorage.page1_id3+'" id="natureOfWork'+localStorage.page1_id3+'" size="40"></div>');
+            $(wrapper3).append('<div><hr><p>Student name:</p><input type="text"  name="supervisedStudentName'+localStorage.page1_id3+'" id="supervisedStudentName'+localStorage.page1_id3+'" size="40"><p>Nature of work:</p><input type="text" name="natureOfWork'+localStorage.page1_id3+'" id="natureOfWork'+localStorage.page1_id3+'" size="40"><button class="remove_field3">Remove</button></div>');
             localStorage.page1_id3 = (parseInt(localStorage.page1_id3)) + 1;
         }
+    });
+
+    $(wrapper3).on("click", ".remove_field3", function (e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x3--;
     });
 
     var x4 = 1;
@@ -234,9 +254,15 @@ $(document).ready(function () {
         e.preventDefault();
         if (x4 < max_fields){
             x4++;
-            $(wrapper4).append('<div><hr><p>Student name:</p><input type="text"  name="reportStudentName'+localStorage.page1_id4+'" id="reportStudentName'+localStorage.page1_id4+'" size="40"> <p>Title:</p><input type="text"  name="reportTitle'+localStorage.page1_id4+'" id="reportTitle'+localStorage.page1_id4+'" size="40"></div>');
+            $(wrapper4).append('<div><hr><p>Student name:</p><input type="text"  name="reportStudentName'+localStorage.page1_id4+'" id="reportStudentName'+localStorage.page1_id4+'" size="40"> <p>Title:</p><input type="text"  name="reportTitle'+localStorage.page1_id4+'" id="reportTitle'+localStorage.page1_id4+'" size="40"><button class="remove_field4">Remove</button></div>');
             localStorage.page1_id4 = (parseInt(localStorage.page1_id4)) + 1;
         }
+    });
+
+    $(wrapper4).on("click", ".remove_field4", function (e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x4--;
     });
 
     var x5 = 1;
@@ -244,9 +270,15 @@ $(document).ready(function () {
         e.preventDefault();
         if (x5 < max_fields){
             x5++;
-            $(wrapper5).append('<div><hr><p>Student name:</p><input type="text"  name="PhDThesesStudentName'+localStorage.page1_id5+'" id="PhDThesesStudentName'+localStorage.page1_id5+'" size="40"> <p>Degree:</p><input type="text"  name="PhDThesesDegree'+localStorage.page1_id5+'" id="PhDThesesDegree'+localStorage.page1_id5+'" size="40"> <p>Name of supervisor:</p><input type="text"  name="PhDThesesSupervisorName'+localStorage.page1_id5+'" id="PhDThesesSupervisorName'+localStorage.page1_id5+'" size="40"> <p>Names of other comittee members:</p><input type="text"  name="PhDThesesCommitteeNames'+localStorage.page1_id5+'" id="PhDThesesCommitteeNames'+localStorage.page1_id5+'" size="40"> <p>Name of institution:</p><input type="text"  name="PhDThesesInstitutionName'+localStorage.page1_id5+'" id="PhDThesesInstitutionName'+localStorage.page1_id5+'" size="40"> <p>Title:</p><input type="text"  name="PhDThesesTitle'+localStorage.page1_id5+'" id="PhDThesesTitle'+localStorage.page1_id5+'" size="40"></div>');
+            $(wrapper5).append('<div><hr><p>Student name:</p><input type="text"  name="PhDThesesStudentName'+localStorage.page1_id5+'" id="PhDThesesStudentName'+localStorage.page1_id5+'" size="40"> <p>Degree:</p><input type="text"  name="PhDThesesDegree'+localStorage.page1_id5+'" id="PhDThesesDegree'+localStorage.page1_id5+'" size="40"> <p>Name of supervisor:</p><input type="text"  name="PhDThesesSupervisorName'+localStorage.page1_id5+'" id="PhDThesesSupervisorName'+localStorage.page1_id5+'" size="40"> <p>Names of other comittee members:</p><input type="text"  name="PhDThesesCommitteeNames'+localStorage.page1_id5+'" id="PhDThesesCommitteeNames'+localStorage.page1_id5+'" size="40"> <p>Name of institution:</p><input type="text"  name="PhDThesesInstitutionName'+localStorage.page1_id5+'" id="PhDThesesInstitutionName'+localStorage.page1_id5+'" size="40"> <p>Title:</p><input type="text"  name="PhDThesesTitle'+localStorage.page1_id5+'" id="PhDThesesTitle'+localStorage.page1_id5+'" size="40"><button class="remove_field5">Remove</button></div>');
             localStorage.page1_id5 = (parseInt(localStorage.page1_id5)) + 1;
         }
+    });
+
+    $(wrapper5).on("click", ".remove_field5", function (e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x5--;
     });
 
 });

@@ -9,6 +9,7 @@ function loadFieldsPage1() {
 }
 
 function saveFieldsPage1() {
+    localStorage.setItem("formPage1", $("#myForm").serialize());
     localStorage.unitName = document.getElementById("unitName").value;
     localStorage.headName = document.getElementById("headName").value;
     localStorage.startDate = document.getElementById("startDate").value;
