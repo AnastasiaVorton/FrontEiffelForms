@@ -11,4 +11,15 @@ $(document).ready(function () {
             }
         });
     });
+
+    $("#admin-btn").on("click", function () {
+        $.ajax({
+            type: "POST",
+            url: "AdminStart.html",
+            success: function (html) {
+                $("#start").html(html);
+            }
+        });
+    });
+
 });
