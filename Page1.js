@@ -15,10 +15,20 @@ function saveFieldsPage1() {
     localStorage.endDate = document.getElementById("endDate").value
 }
 
+function fieldsIsEmpty() {
+    // alert(isEmptyObject(localStorage.getItem("title").value));
+    alert(localStorage.getItem("unitName").value === "");
+    if (localStorage.getItem("unitName").value === "" || localStorage.getItem("headName").value === "") {
+        alert("Fill in all the obligatory fields!")
+    }
+}
+
+
 $(document).ready(function () {
     loadFieldsPage1();
     $("#js-next-button").on("click", function () {
         saveFieldsPage1();
+        fieldsIsEmpty();
         $.ajax({
             type: "POST",
             url: "Page2.html",
@@ -29,7 +39,7 @@ $(document).ready(function () {
     });
     // $("#js-back-button").on("click", function () {
     //
-    //     saveFieldsPage1();
+    //     saveFieldsPage2();
     //     $.ajax({
     //         type: "POST",
     //         url: "WelcomePage.html",
