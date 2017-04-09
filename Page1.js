@@ -14,30 +14,28 @@ function saveFieldsPage1() {
     localStorage.startDate = document.getElementById("startDate").value;
     localStorage.endDate = document.getElementById("endDate").value
 }
-
+function fieldsIsEmpty() {
+    if (localStorage.getItem("unitName") === "" || localStorage.getItem("headName") === "") {
+        alert("Fill in all the obligatory fields!")
+        return true;
+    }
+    return false;
+}
 $(document).ready(function () {
     loadFieldsPage1();
     $("#js-next-button").on("click", function () {
         saveFieldsPage1();
-        alert(localStorage.getItem("unitName") === "");
-        $.ajax({
-            type: "POST",
-            url: "Page2.html",
-            success: function (html) {
-                $("#container-main-field").html(html);
-            }
-        });
+        if (fieldsIsEmpty()) {
+            return;
+        } else if (fieldsIsEmpty() === false) {
+            $.ajax({
+                type: "POST",
+                url: "Page2.html",
+                success: function (html) {
+                    $("#container-main-field").html(html);
+                }
+            });
+        }
     });
-    // $("#js-back-button").on("click", function () {
-    //
-    //     saveFieldsPage1();
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "WelcomePage.html",
-    //         data: ($("#myForm").serialize()),
-    //         success: function (html) {
-    //             $("#container-main-field").html(html);
-    //         }
-    //     });
-    // });
+
 });
