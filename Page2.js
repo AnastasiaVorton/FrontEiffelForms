@@ -183,7 +183,7 @@ function field3isEmpty() {
 
 function field4isEmpty() {
     for (var i = 1; i < (parseInt(localStorage.page2_id4)); i++) {
-        if (localStorage.getItem("reportsStudentName" + i) === "" || localStorage.getItem("reportTitle" + i) === "" ||
+        if ( localStorage.getItem("reportTitle" + i) === "" ||
         localStorage.getItem("publicationPlans" + i) === "") {
             return true;
         }

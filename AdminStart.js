@@ -48,7 +48,7 @@ $("#query2").on("click", function () {
 $("#loadQuery2").on("click", function () {
     $.ajax({
         type: "POST",
-        url: "/load/query2/" + document.getElementById("query2Unit").value + "&" + document.getElementById("query2StartYear").value + "&" + document.getElementById("query2FinalYear"),
+        url: "/load/query2/" + document.getElementById("query2Unit").value + "&" + document.getElementById("query2StartYear").value + "&" + document.getElementById("query2FinalYear").value,
         success: function (result) {
             query2output(result);
         }
