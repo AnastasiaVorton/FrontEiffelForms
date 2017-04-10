@@ -73,7 +73,7 @@ function constructCourseFields() {
             $("#level1").val(localStorage.getItem("level1"));
             $("#num-students1").val(localStorage.getItem("num-students1"));
         } else {
-            $(wrapper1).append('<div><hr><p>Course name:</p><input type="text" name="courseName' + i + '" id="courseName' + i + '"/><p>Semester:</p><select name="semester'+i+'" id="semester'+i+'"> <option disabled>Select semester:</option> <option value="Fall">Fall</option> <option selected value="Spring">Spring</option> </select><p>Level:</p><select name="level' + i + '" id="level' + i + '"/><option disabled>Select level:</option> <option value="Bachelor">Bachelor</option> <option selected value="Master">Master</option> <option selected value="PhD">PhD</option></select><p>Number of students:</p><input type="number" name="num-students' + i + '" id="num-students' + i + '"/><button class="remove_field1">Remove</button></div>');
+            $(wrapper1).append('<div><hr><p>Course name:</p><input type="text" name="courseName' + i + '" id="courseName' + i + '"/><p>Semester:</p><select name="semester' + i + '" id="semester' + i + '"> <option disabled>Select semester:</option> <option value="Fall">Fall</option> <option selected value="Spring">Spring</option> </select><p>Level:</p><select name="level' + i + '" id="level' + i + '"/><option disabled>Select level:</option> <option value="Bachelor">Bachelor</option> <option selected value="Master">Master</option> <option selected value="PhD">PhD</option></select><p>Number of students:</p><input type="number" name="num-students' + i + '" id="num-students' + i + '"/><button class="remove_field1">Remove</button></div>');
             $("#courseName" + i).val(localStorage.getItem("courseName" + i));
             $("#semester" + i).val(localStorage.getItem("semester" + i));
             $("#level" + i).val(localStorage.getItem("level" + i));
@@ -91,7 +91,7 @@ function constructExamFields() {
             $("#kindOfExam1").val(localStorage.getItem("kindOfExam1"));
             $("#num-studentsExam1").val(localStorage.getItem("num-studentsExam1"));
         } else {
-            $(wrapper2).append('<div><hr><p>Course name:</p><input type="text"  name="courseNameExam' + i + '" id="courseNameExam' + i + '" size="40"><p>Semester:</p><input type="text" name="semesterExam' + i + '" id="semesterExam' + i + '" size="40"><p>Kind of exam:</p><input type="text" name="kindOfExam' + i + '" id="kindOfExam' + i + '" size="40"> <p>Number of students:</p><input type="number" name="num-studentsExam' + i + '" id="num-studentsExam' + i + '" size="30"><button class="remove_field2">Remove</button></div>');
+            $(wrapper2).append('<div><hr><p>Course name:</p><input type="text"  name="courseNameExam' + i + '" id="courseNameExam' + i + '" size="40"><p>Semester:</p><select name="semesterExam'+i+'" id="semesterExam'+i+'"> <option disabled>Select semester:</option> <option value="Fall">Fall</option> <option selected value="Spring">Spring</option> </select><p>Kind of exam:</p><input type="text" name="kindOfExam' + i + '" id="kindOfExam' + i + '" size="40"> <p>Number of students:</p><input type="number" name="num-studentsExam' + i + '" id="num-studentsExam' + i + '" size="30"><button class="remove_field2">Remove</button></div>');
             $("#courseNameExam" + i).val(localStorage.getItem("courseNameExam" + i));
             $("#semesterExam" + i).val(localStorage.getItem("semesterExam" + i));
             $("#kindOfExam" + i).val(localStorage.getItem("kindOfExam" + i));
@@ -141,7 +141,7 @@ function constructPhDThesesFields() {
             $("#PhDThesesInstitutionName1").val(localStorage.getItem("PhDThesesInstitutionName1"));
             $("#PhDThesesTitle1").val(localStorage.getItem("PhDThesesTitle1"));
         } else {
-            $(wrapper5).append('<div><hr><p>Student name:</p><input type="text"  name="PhDThesesStudentName' + i + '" id="PhDThesesStudentName' + i + '" size="40"> <p>Degree:</p><input type="text"  name="PhDThesesDegree' + i + '" id="PhDThesesDegree' + i + '" size="40"> <p>Name of supervisor:</p><input type="text"  name="PhDThesesSupervisorName' + i + '" id="PhDThesesSupervisorName' + i + '" size="40"> <p>Names of other comittee members:</p><input type="text"  name="PhDThesesCommitteeNames' + i + '" id="PhDThesesCommitteeNames' + i + '" size="40"> <p>Name of institution:</p><input type="text"  name="PhDThesesInstitutionName' + i + '" id="PhDThesesInstitutionName' + i + '" size="40"> <p>Title:</p><input type="text"  name="PhDThesesTitle' + i + '" id="PhDThesesTitle' + i + '" size="40"><button class="remove_field5">Remove</button></div>');
+            $(wrapper5).append('<div><hr><p>Student name:</p><input type="text"  name="PhDThesesStudentName' + i + '" id="PhDThesesStudentName' + i + '" size="40"> <p>Degree:</p><select name="PhDThesesDegree'+i+'" id="PhDThesesDegree'+i+'"> <option disabled>Select level:</option> <option value="PhD">PhD</option> <option selected value="Dr.">Dr.</option> <option selected value="Sc.">Sc.</option> </select><p>Name of supervisor:</p><input type="text"  name="PhDThesesSupervisorName' + i + '" id="PhDThesesSupervisorName' + i + '" size="40"> <p>Names of other comittee members:</p><input type="text"  name="PhDThesesCommitteeNames' + i + '" id="PhDThesesCommitteeNames' + i + '" size="40"> <p>Name of institution:</p><input type="text"  name="PhDThesesInstitutionName' + i + '" id="PhDThesesInstitutionName' + i + '" size="40"> <p>Title:</p><input type="text"  name="PhDThesesTitle' + i + '" id="PhDThesesTitle' + i + '" size="40"><button class="remove_field5">Remove</button></div>');
             $("#PhDThesesStudentName" + i).val(localStorage.getItem("PhDThesesStudentName" + i));
             $("#PhDThesesDegree" + i).val(localStorage.getItem("PhDThesesDegree" + i));
             $("#PhDThesesSupervisorName" + i).val(localStorage.getItem("PhDThesesSupervisorName" + i));
@@ -183,8 +183,8 @@ function field3isEmpty() {
 
 function field4isEmpty() {
     for (var i = 1; i < (parseInt(localStorage.page2_id4)); i++) {
-        if ( localStorage.getItem("reportTitle" + i) === "" ||
-        localStorage.getItem("publicationPlans" + i) === "") {
+        if (localStorage.getItem("reportTitle" + i) === "" ||
+            localStorage.getItem("publicationPlans" + i) === "") {
             return true;
         }
     }
@@ -259,7 +259,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x1 < max_fields) {
             x1++;
-            $(wrapper1).append('<div><hr><p>Course name:</p><input type="text" name="courseName' + localStorage.page2_id1 + '" id="courseName' + localStorage.page2_id1 + '"/><p>Semester:</p><select name="semester' + localStorage.page2_id1 +'" id="semester' + localStorage.page2_id1 + '"> <option disabled>Select semester:</option> <option value="Fall">Fall</option> <option selected value="Spring">Spring</option> </select><p>Level:</p><select name="level' + localStorage.page2_id1 + '" id="level' + localStorage.page2_id1 + '"> <option disabled>Select level:</option> <option value="Bachelor">Bachelor</option> <option selected value="Master">Master</option> <option selected value="PhD">PhD</option> </select><p>Number of students:</p><input type="number" name="num-students' + localStorage.page2_id1 + '" id="num-students' + localStorage.page2_id1 + '"/><button class="remove_field1">Remove</button></div>');
+            $(wrapper1).append('<div><hr><p>Course name:</p><input type="text" name="courseName' + localStorage.page2_id1 + '" id="courseName' + localStorage.page2_id1 + '"/><p>Semester:</p><select name="semester' + localStorage.page2_id1 + '" id="semester' + localStorage.page2_id1 + '"> <option disabled>Select semester:</option> <option value="Fall">Fall</option> <option selected value="Spring">Spring</option> </select><p>Level:</p><select name="level' + localStorage.page2_id1 + '" id="level' + localStorage.page2_id1 + '"> <option disabled>Select level:</option> <option value="Bachelor">Bachelor</option> <option selected value="Master">Master</option> <option selected value="PhD">PhD</option> </select><p>Number of students:</p><input type="number" name="num-students' + localStorage.page2_id1 + '" id="num-students' + localStorage.page2_id1 + '"/><button class="remove_field1">Remove</button></div>');
             localStorage.page2_id1 = (parseInt(localStorage.page2_id1)) + 1;
         }
     });
@@ -268,7 +268,7 @@ $(document).ready(function () {
         e.preventDefault();
         $(this).parent('div').remove();
         x1--;
-        localStorage.page2_id1 = (parseInt (localStorage.page2_id1)) - 1;
+        localStorage.page2_id1 = (parseInt(localStorage.page2_id1)) - 1;
     });
 
     var x2 = 1;
@@ -276,7 +276,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x2 < max_fields) {
             x2++;
-            $(wrapper2).append('<div><hr><p>Course name:</p><input type="text"  name="courseNameExam' + localStorage.page2_id2 + '" id="courseNameExam' + localStorage.page2_id2 + '" size="40"><p>Semester:</p><input type="text" name="semesterExam' + localStorage.page2_id2 + '" id="semesterExam' + localStorage.page2_id2 + '" size="40"><p>Kind of exam:</p><input type="text" name="kindOfExam' + localStorage.page2_id2 + '" id="kindOfExam' + localStorage.page2_id2 + '" size="40"> <p>Number of students:</p><input type="number" name="num-studentsExam' + localStorage.page2_id2 + '" id="num-studentsExam' + localStorage.page2_id2 + '" size="30"><button class="remove_field2">Remove</button></div>');
+            $(wrapper2).append('<div><hr><p>Course name:</p><input type="text"  name="courseNameExam' + localStorage.page2_id2 + '" id="courseNameExam' + localStorage.page2_id2 + '" size="40"><p>Semester:</p><select name="semesterExam' + localStorage.page2_id2 + '" id="semesterExam' + localStorage.page2_id2 + '"> <option disabled>Select semester:</option> <option value="Fall">Fall</option> <option selected value="Spring">Spring</option> </select><p>Kind of exam:</p><input type="text" name="kindOfExam' + localStorage.page2_id2 + '" id="kindOfExam' + localStorage.page2_id2 + '" size="40"> <p>Number of students:</p><input type="number" name="num-studentsExam' + localStorage.page2_id2 + '" id="num-studentsExam' + localStorage.page2_id2 + '" size="30"><button class="remove_field2">Remove</button></div>');
             localStorage.page2_id2 = (parseInt(localStorage.page2_id2)) + 1;
         }
     });
@@ -327,7 +327,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x5 < max_fields) {
             x5++;
-            $(wrapper5).append('<div><hr><p>Student name:</p><input type="text"  name="PhDThesesStudentName' + localStorage.page2_id5 + '" id="PhDThesesStudentName' + localStorage.page2_id5 + '" size="40"> <p>Degree:</p><input type="text"  name="PhDThesesDegree' + localStorage.page2_id5 + '" id="PhDThesesDegree' + localStorage.page2_id5 + '" size="40"> <p>Name of supervisor:</p><input type="text"  name="PhDThesesSupervisorName' + localStorage.page2_id5 + '" id="PhDThesesSupervisorName' + localStorage.page2_id5 + '" size="40"> <p>Names of other comittee members:</p><input type="text"  name="PhDThesesCommitteeNames' + localStorage.page2_id5 + '" id="PhDThesesCommitteeNames' + localStorage.page2_id5 + '" size="40"> <p>Name of institution:</p><input type="text"  name="PhDThesesInstitutionName' + localStorage.page2_id5 + '" id="PhDThesesInstitutionName' + localStorage.page2_id5 + '" size="40"> <p>Title:</p><input type="text"  name="PhDThesesTitle' + localStorage.page2_id5 + '" id="PhDThesesTitle' + localStorage.page2_id5 + '" size="40"><button class="remove_field5">Remove</button></div>');
+            $(wrapper5).append('<div><hr><p>Student name:</p><input type="text"  name="PhDThesesStudentName' + localStorage.page2_id5 + '" id="PhDThesesStudentName' + localStorage.page2_id5 + '" size="40"> <p>Degree:</p><select name="PhDThesesDegree' + localStorage.page2_id5 + '" id="PhDThesesDegree' + localStorage.page2_id5 + '"> <option disabled>Select level:</option> <option value="PhD">PhD</option> <option selected value="Dr.">Dr.</option> <option selected value="Sc.">Sc.</option> </select><p>Name of supervisor:</p><input type="text"  name="PhDThesesSupervisorName' + localStorage.page2_id5 + '" id="PhDThesesSupervisorName' + localStorage.page2_id5 + '" size="40"> <p>Names of other comittee members:</p><input type="text"  name="PhDThesesCommitteeNames' + localStorage.page2_id5 + '" id="PhDThesesCommitteeNames' + localStorage.page2_id5 + '" size="40"> <p>Name of institution:</p><input type="text"  name="PhDThesesInstitutionName' + localStorage.page2_id5 + '" id="PhDThesesInstitutionName' + localStorage.page2_id5 + '" size="40"> <p>Title:</p><input type="text"  name="PhDThesesTitle' + localStorage.page2_id5 + '" id="PhDThesesTitle' + localStorage.page2_id5 + '" size="40"><button class="remove_field5">Remove</button></div>');
             localStorage.page2_id5 = (parseInt(localStorage.page2_id5)) + 1;
         }
     });

@@ -17,7 +17,7 @@
                 <div>
                     <p>Course name:</p><input type="text" name="courseName1" id="courseName1" size="40">
                     <p>Semester:</p>
-                    <select name="semester1"  id="semester1">
+                    <select name="semester1" id="semester1">
                         <option disabled>Select semester:</option>
                         <option value="Fall">Fall</option>
                         <option selected value="Spring">Spring</option>
@@ -46,7 +46,12 @@
             <div class="input-fields-wrap2">
                 <div>
                     <p>Course name:</p><input type="text" name="courseNameExam1" id="courseNameExam1" size="40">
-                    <p>Semester:</p><input type="text" name="semesterExam1" id="semesterExam1" size="40">
+                    <p>Semester:</p>
+                    <select name="semesterExam1" id="semesterExam1">
+                        <option disabled>Select semester:</option>
+                        <option value="Fall">Fall</option>
+                        <option selected value="Spring">Spring</option>
+                    </select>
                     <p>Kind of exam:</p><input type="text" name="kindOfExam1" id="kindOfExam1" size="40">
                     <p>Number of students:</p><input type="number" name="num-studentsExam1" id="num-studentsExam1"
                                                      size="30">
@@ -90,7 +95,13 @@
             <div class="input-fields-wrap5">
                 <div><p>Student name:</p><input type="text" name="PhDThesesStudentName1" id="PhDThesesStudentName1"
                                                 size="40">
-                    <p>Degree:</p><input type="text" name="PhDThesesDegree1" id="PhDThesesDegree1" size="40">
+                    <p>Degree:</p>
+                    <select name="PhDThesesDegree1" id="PhDThesesDegree1">
+                        <option disabled>Select level:</option>
+                        <option value="PhD">PhD</option>
+                        <option selected value="Dr.">Dr.</option>
+                        <option selected value="Sc.">Sc.</option>
+                    </select>
                     <p>Name of supervisor:</p><input type="text" name="PhDThesesSupervisorName1"
                                                      id="PhDThesesSupervisorName1"
                                                      size="40">
@@ -115,5 +126,3 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 <script src="Page2.js"></script>
-
-
