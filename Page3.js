@@ -68,10 +68,10 @@ function constructGrantsFields() {
             $("#amount1").val(localStorage.getItem("amount1"));
         } else {
             $(wrapper1).append('<div><hr><p>Title: </p><input type="text" name="title' + i + '" id="title' + i + '"/> <p>Granting agency:</p><input type="text" name="agency' + i + '" id="agency' + i + '"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="text" name="period' + i + '" id="period' + i + '"> <p>Amount:</p><input type="number" name="amount' + i + '" id="amount' + i + '"></div>');
-            $("#courseName" + i).val(localStorage.getItem("title" + i));
-            $("#semester" + i).val(localStorage.getItem("agency" + i));
-            $("#level" + i).val(localStorage.getItem("period" + i));
-            $("#num-students" + i).val(localStorage.getItem("amount" + i));
+            $("#title" + i).val(localStorage.getItem("title" + i));
+            $("#agency" + i).val(localStorage.getItem("agency" + i));
+            $("#period" + i).val(localStorage.getItem("period" + i));
+            $("#amount" + i).val(localStorage.getItem("amount" + i));
         }
     }
 }
@@ -104,7 +104,7 @@ function constructCollaborationsFields() {
             $(wrapper3).append('<div><hr><p>Country:</p><input type="text" name="country' + i + '" id="country' + i + '" > <p>Name of institution:</p><input type="text" name="name' + i + '" id="name' + i + '" > <p>Name of principal contact</p><input type="text" name="name-of-principal' + i + '" id="name-of-principal' + i + '"> <p>Nature:</p><input type="text" name="nature' + i + '" id="nature' + i + '" ></div>');
             $("#country" + i).val(localStorage.getItem("country" + i));
             $("#name" + i).val(localStorage.getItem("name" + i));
-            $("#principal" + i).val(localStorage.getItem("principal" + i));
+            $("#name-of-principal" + i).val(localStorage.getItem("principal" + i));
             $("#nature" + i).val(localStorage.getItem("nature" + i));
         }
     }
@@ -117,7 +117,7 @@ function constructConferencePublicationsFields() {
             $("#stud-name1").val(localStorage.getItem("stud-name1"));
             $("#publications1").val(localStorage.getItem("publications1"));
         } else {
-            $(wrapper4).append('<div><hr><p>Name of the student:</p><input type="text" name="stud-name' + i + '" id="stud-name' + i + '" size="40"> <p>Publications:</p><input type="text" name="publications' + i + '" id="publications' + i + '" size="40"> </div>');
+            $(wrapper4).append('<div><hr><p>Name of the student:</p><input type="text" name="stud-name' + i + '" id="stud-name' + i + '" size="40"> <p>Publications:</p><input type="text" name="publications' + i + '" id="publications' + i + '" size="40"></div>');
             $("#stud-name" + i).val(localStorage.getItem("stud-name" + i));
             $("#publications" + i).val(localStorage.getItem("publications" + i));
         }
@@ -130,7 +130,7 @@ function constructJournalPublicationsFields() {
         if (i == 1) {
             $("#journal-publications1").val(localStorage.getItem("journal-publications1"));
         } else {
-            $(wrapper5).append('<div><hr><p>Publications:</p><input type="text" name="journal-publications' + i + '" id="journal-publications' + i + '" size="40"> </div>');
+            $(wrapper5).append('<div><hr><p>Publications:</p><input type="text" name="journal-publications' + i + '" id="journal-publications' + i + '" size="40"></div>');
             $("#journal-publications" + i).val(localStorage.getItem("journal-publications" + i));
         }
     }
@@ -146,25 +146,24 @@ function checkFieldsPage3() {
 }
 
 function fields1IsEmpty() {
-    for (var i = 1; i <= (parseInt(localStorage.page3_id1)); i++) {
+    for (var i = 1; i < (parseInt(localStorage.page3_id1)); i++) {
+        // alert(localStorage.getItem("title" + i) === "");
         if (localStorage.getItem("title" + i) === "" || localStorage.getItem("agency" + i) === "" ||
             localStorage.getItem("period" + i) === "" || localStorage.getItem("amount" + i) === "") {
             return true;
-        } else {
-            return false;
         }
     }
+    return false;
 }
 
 function fields2IsEmpty() {
-    for (var i = 1; i <= (parseInt(localStorage.page3_id2)); i++) {
+    for (var i = 1; i < (parseInt(localStorage.page3_id2)); i++) {
         if (localStorage.getItem("proj-title" + i) === "" || localStorage.getItem("personnel" + i) === "" ||
             localStorage.getItem("dates" + i) === "") {
             return true;
-        } else {
-            return false;
         }
     }
+    return false;
 }
 
 
@@ -237,6 +236,7 @@ $(document).ready(function () {
         e.preventDefault();
         $(this).parent('div').remove();
         x1--;
+        localStorage.page3_id1 = (parseInt(localStorage.page3_id1)) - 1;
     });
 
     var x2 = 1;
@@ -249,6 +249,13 @@ $(document).ready(function () {
         }
     });
 
+    $(wrapper2).on("click", ".remove_field2", function (e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x2--;
+        localStorage.page3_id2 = (parseInt(localStorage.page3_id2)) - 1;
+    });
+
     var x3 = 1;
     $(add_button3).on("click", function (e) {
         e.preventDefault();
@@ -257,6 +264,13 @@ $(document).ready(function () {
             $(wrapper3).append('<div><hr><p>Country:</p><input type="text" name="country' + localStorage.page3_id3 + '"  id="country' + localStorage.page3_id3 + '"  size="40"> <p>Name of institution:</p><input type="text" name="name' + localStorage.page3_id3 + '"  id="name' + localStorage.page3_id3 + '"  size="40"> <p>Name of principal contact</p><input type="text" name="name-of-principal' + localStorage.page3_id3 + '"  id="name-of-principal' + localStorage.page3_id3 + '"  size="40"> <p>Nature:</p><input type="number" name="nature' + localStorage.page3_id3 + '"  id="nature' + localStorage.page3_id3 + '"  size="40"><button class="remove_field3">Remove</button></div>');
             localStorage.page3_id3 = (parseInt(localStorage.page3_id3)) + 1;
         }
+    });
+
+    $(wrapper3).on("click", ".remove_field3", function (e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x3--;
+        localStorage.page3_id3 = (parseInt(localStorage.page3_id3)) - 1;
     });
 
     var x4 = 1;
@@ -269,6 +283,13 @@ $(document).ready(function () {
         }
     });
 
+    $(wrapper4).on("click", ".remove_field4", function (e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x4--;
+        localStorage.page3_id4 = (parseInt(localStorage.page3_id4)) - 1;
+    });
+
     var x5 = 1;
     $(add_button5).on("click", function (e) {
         e.preventDefault();
@@ -277,5 +298,12 @@ $(document).ready(function () {
             $(wrapper5).append(' <div><hr><p>Publications:</p><input type="text" name="journal-publications' + localStorage.page3_id5 + '" id="journal-publications' + localStorage.page3_id5 + '" size="40"><button class="remove_field5">Remove</button></div>');
             localStorage.page3_id5 = (parseInt(localStorage.page3_id5)) + 1;
         }
+    });
+
+    $(wrapper5).on("click", ".remove_field5", function (e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x5--;
+        localStorage.page3_id5 = (parseInt(localStorage.page3_id5)) - 1;
     });
 });
