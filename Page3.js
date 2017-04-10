@@ -52,7 +52,6 @@ function saveCollaborationsFields() {
 
 function saveConferencePublicationsFields() {
     for (var i = 1; i < (parseInt(localStorage.page3_id4)); i++) {
-        // localStorage.setItem("stud-name" + i, document.getElementById("stud-name" + i).value);
         localStorage.setItem("publications" + i, document.getElementById("publications" + i).value);
     }
 }
