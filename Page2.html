@@ -16,8 +16,19 @@
             <div class="input-fields-wrap1">
                 <div>
                     <p>Course name:</p><input type="text" name="courseName1" id="courseName1" size="40">
-                    <p>Semester:</p><input type="text" name="semester1" id="semester1" size="40">
-                    <p>Level:</p><input type="text" name="level1" id="level1" size="40">
+                    <p>Semester:</p>
+                    <select name="semester1" id="semester1">
+                        <option disabled>Select semester:</option>
+                        <option value="Fall">Fall</option>
+                        <option selected value="Spring">Spring</option>
+                    </select>
+                    <p>Level:</p>
+                    <select name="level1" id="level1">
+                        <option disabled>Select level:</option>
+                        <option value="Bachelor">Bachelor</option>
+                        <option selected value="Master">Master</option>
+                        <option selected value="PhD">PhD</option>
+                    </select>
                     <p>Number of students:</p><input type="number" name="num-students1" id="num-students1" size="40">
                 </div>
             </div>
@@ -27,7 +38,8 @@
             <div class="field-info">
                 <p>
                     Include all the examinations administrated or co-administrated by
-                    members of your unit. For each list: course name(make sure that this course was mentioned before), semester (Spring or Fall), kind of
+                    members of your unit. For each list: course name(make sure that this course was mentioned before),
+                    semester (Spring or Fall), kind of
                     exam (final exam or repetition exam), approximate number of students who took the exam.
                 </p>
             </div>
@@ -62,7 +74,7 @@
             <div class="input-fields-wrap4">
                 <div><p>Student name:</p><input type="text" name="reportStudentName1" id="reportStudentName1" size="40">
                     <p>Title:</p><input type="text" name="reportTitle1" id="reportTitle1" size="40">
-                    <p>Publication plans:</p><input type="text"  name="publicationPlans1" id="publicationPlans1" >
+                    <p>Publication plans:</p><input type="text" name="publicationPlans1" id="publicationPlans1">
                 </div>
             </div>
             <button class="add-field-button4">Add new</button>

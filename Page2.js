@@ -73,7 +73,7 @@ function constructCourseFields() {
             $("#level1").val(localStorage.getItem("level1"));
             $("#num-students1").val(localStorage.getItem("num-students1"));
         } else {
-            $(wrapper1).append('<div><hr><p>Course name:</p><input type="text" name="courseName' + i + '" id="courseName' + i + '"/><p>Semester:</p><input type="text" name="semester' + i + '" id="semester' + i + '"/> <p>Level:</p><input type="text" name="level' + i + '" id="level' + i + '"/> <p>Number of students:</p><input type="number" name="num-students' + i + '" id="num-students' + i + '"/><button class="remove_field1">Remove</button></div>');
+            $(wrapper1).append('<div><hr><p>Course name:</p><input type="text" name="courseName' + i + '" id="courseName' + i + '"/><p>Semester:</p><select name="semester'+i+'" id="semester'+i+'"> <option disabled>Select semester:</option> <option value="Fall">Fall</option> <option selected value="Spring">Spring</option> </select><p>Level:</p><select name="level' + i + '" id="level' + i + '"/><option disabled>Select level:</option> <option value="Bachelor">Bachelor</option> <option selected value="Master">Master</option> <option selected value="PhD">PhD</option></select><p>Number of students:</p><input type="number" name="num-students' + i + '" id="num-students' + i + '"/><button class="remove_field1">Remove</button></div>');
             $("#courseName" + i).val(localStorage.getItem("courseName" + i));
             $("#semester" + i).val(localStorage.getItem("semester" + i));
             $("#level" + i).val(localStorage.getItem("level" + i));
@@ -259,7 +259,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x1 < max_fields) {
             x1++;
-            $(wrapper1).append('<div><hr><p>Course name:</p><input type="text" name="courseName' + localStorage.page2_id1 + '" id="courseName' + localStorage.page2_id1 + '"/><p>Semester:</p><input type="text" name="semester' + localStorage.page2_id1 + '" id="semester' + localStorage.page2_id1 + '"/> <p>Level:</p><input type="text" name="level' + localStorage.page2_id1 + '" id="level' + localStorage.page2_id1 + '"/> <p>Number of students:</p><input type="number" name="num-students' + localStorage.page2_id1 + '" id="num-students' + localStorage.page2_id1 + '"/><button class="remove_field1">Remove</button></div>');
+            $(wrapper1).append('<div><hr><p>Course name:</p><input type="text" name="courseName' + localStorage.page2_id1 + '" id="courseName' + localStorage.page2_id1 + '"/><p>Semester:</p><select name="semester' + localStorage.page2_id1 + '" id="semester' + localStorage.page2_id1 + '"> <option disabled>Select semester:</option> <option value="Fall">Fall</option> <option selected value="Spring">Spring</option> </select><p>Level:</p><select name="level' + localStorage.page2_id1 + '" id="level' + localStorage.page2_id1 + '"> <option disabled>Select level:</option> <option value="Bachelor">Bachelor</option> <option selected value="Master">Master</option> <option selected value="PhD">PhD</option> </select><p>Number of students:</p><input type="number" name="num-students' + localStorage.page2_id1 + '" id="num-students' + localStorage.page2_id1 + '"/><button class="remove_field1">Remove</button></div>');
             localStorage.page2_id1 = (parseInt(localStorage.page2_id1)) + 1;
         }
     });
