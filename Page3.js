@@ -73,7 +73,7 @@ function constructGrantsFields() {
             $("#continuation1").val(localStorage.getItem("continuation1"));
             $("#amount1").val(localStorage.getItem("amount1"));
         } else {
-            $(wrapper1).append('<div><hr><p>Title: </p><input type="text" name="title' + i + '" id="title' + i + '"/> <p>Granting agency:</p><input type="text" name="agency' + i + '" id="agency' + i + '"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="date" name="startPeriod' + i + '" id="startPeriod' + i + '"><input type="date" name="endPeriod' + i + '" id="endPeriod' + i + '"><p>Continuation of other grant:</p><input type="text" name="continuation1' + i + '" id="continuation1' + i + '"><p>Amount:</p><input type="number" name="amount' + i + '" id="amount' + i + '"></div>');
+            $(wrapper1).append('<div><hr><p>Title: </p><input type="text" name="title' + i + '" id="title' + i + '"/> <p>Granting agency:</p><input type="text" name="agency' + i + '" id="agency' + i + '"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="date" name="startPeriod' + i + '" id="startPeriod' + i + '"><input type="date" name="endPeriod' + i + '" id="endPeriod' + i + '"><p>Continuation of other grant:</p><input type="text" name="continuation' + i + '" id="continuation' + i + '"><p>Amount:</p><input type="number" name="amount' + i + '" id="amount' + i + '"></div>');
             $("#title" + i).val(localStorage.getItem("title" + i));
             $("#agency" + i).val(localStorage.getItem("agency" + i));
             $("#startPeriod" + i).val(localStorage.getItem("startPeriod" + i));
@@ -95,7 +95,7 @@ function constructResearchFields() {
             $("#externalPersonnel1").val(localStorage.getItem("externalPersonnel1"));
             $("#financing1").val(localStorage.getItem("financing1"));
         } else {
-            $(wrapper2).append('<div><hr><p>Title:</p><input type="text" name="proj-title' + i + '" id="proj-title' + i + '"> <p>Personnel involved:</p><input type="text" name="personnel' + i + '" id="personnel' + i + '"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="text" name="dates' + i + '" id="dates' + i + '"></div> ');
+            $(wrapper2.append('<div><hr><p>Title:</p><input type="text" name="proj-title' + i + '" id="proj-title' + i + '" size="40"> <p>Personnel involved:</p><input type="text" name="personnel' + i + '" id="personnel' + i + '" size="40"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="date" name="startDates' + i + '" id="startDates' + i + '" size="40"><input type="date" name="endDates' + i + '" id="endDates' + i + '" size="40"><p>External personnel involved:</p><input type="text" name="externalPersonnel' + i + '" id="externalPersonnel' + i + '" size="40"><p>Financing:</p><input type="text" name="financing' + i + '" id="financing' + i + '" size="40"><button class="remove_field2">Remove</button></div>'));
             $("#proj-title" + i).val(localStorage.getItem("proj-title" + i));
             $("#personnel" + i).val(localStorage.getItem("personnel" + i));
             $("#startDates" + i).val(localStorage.getItem("startDates" + i));
@@ -206,8 +206,8 @@ $(document).ready(function () {
     }
     constructFields();
     $("#submit-button").on("click", function () {
-        saveFieldsPage3();
         if (checkFieldsPage3()) {
+            saveFieldsPage3();
             return;
         } else if (checkFieldsPage3() === false) {
             $.ajax({
@@ -255,7 +255,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x1 < max_fields) {
             x1++;
-            $(wrapper1).append('<div><hr><p>Title:</p><input type="text" name="title' + localStorage.page3_id1 + '" id="title' + localStorage.page3_id1 + '" size="40"> <p>Granting agency:</p><input type="text" name="agency' + localStorage.page3_id1 + '" id="agency' + localStorage.page3_id1 + '" size="40"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="date" name="startPeriod' + localStorage.page3_id1 + '" id="startPeriod' + localStorage.page3_id1 + '"size="40"><input type="date" name="endPeriod' + localStorage.page3_id1 + '" id="endPeriod' + localStorage.page3_id1 + '"size="40"><p>Continuation of other grant:</p><input type="text" name="continuation' + localStorage.page3_id1 + '" id="contionuation' + localStorage.page3_id1 + '"size="40"><p>Amount:</p><input type="number" name="amount' + localStorage.page3_id1 + '" id="amount' + localStorage.page3_id1 + '" size="40"><button class="remove_field1">Remove</button></div>');
+            $(wrapper1).append('<div><hr><p>Title:</p><input type="text" name="title' + localStorage.page3_id1 + '" id="title' + localStorage.page3_id1 + '" size="40"> <p>Granting agency:</p><input type="text" name="agency' + localStorage.page3_id1 + '" id="agency' + localStorage.page3_id1 + '" size="40"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="date" name="startPeriod' + localStorage.page3_id1 + '" id="startPeriod' + localStorage.page3_id1 + '"size="40"><input type="date" name="endPeriod' + localStorage.page3_id1 + '" id="endPeriod' + localStorage.page3_id1 + '"size="40"><p>Continuation of other grant:</p><input type="text" name="continuation' + localStorage.page3_id1 + '" id="continuation' + localStorage.page3_id1 + '"size="40"><p>Amount:</p><input type="number" name="amount' + localStorage.page3_id1 + '" id="amount' + localStorage.page3_id1 + '" size="40"><button class="remove_field1">Remove</button></div>');
             localStorage.page3_id1 = (parseInt(localStorage.page3_id1)) + 1;
         }
     });
