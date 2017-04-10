@@ -13,7 +13,6 @@ $("#query1").on("click", function () {
 
 
 $("#loadQuery1").on("click", function () {
-    alert(document.getElementById("query1Year").value);
     $.ajax({
         type: "POST",
         url: "/load/query1/"+document.getElementById("query1Year").value,
@@ -28,7 +27,7 @@ var wrapper = $(".query1-additional");
 function query1output(input) {
     var temp = input.split("&");
     for (var i = 0; i < temp.length; i++) {
-        $(wrapper).append('<p>' + temp[i] + '<br>');
+        $(wrapper).html('<p>' + temp[i] + '<br>');
     }
 }
 
