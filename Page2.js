@@ -135,7 +135,7 @@ function constructPhDThesesFields() {
     for (var i = 1; i < (parseInt(localStorage.page2_id5)); i++) {
         if (i == 1) {
             $("#PhDThesesStudentName1").val(localStorage.getItem("PhDThesesStudentName1"));
-            $("#PhDThesesDegree1").val(localStorage.getItem("PhDThesesDegree"));
+            $("#PhDThesesDegree1").val(localStorage.getItem("PhDThesesDegree1"));
             $("#PhDThesesSupervisorName1").val(localStorage.getItem("PhDThesesSupervisorName1"));
             $("#PhDThesesCommitteeNames1").val(localStorage.getItem("PhDThesesCommitteeNames1"));
             $("#PhDThesesInstitutionName1").val(localStorage.getItem("PhDThesesInstitutionName1"));
@@ -268,7 +268,7 @@ $(document).ready(function () {
         e.preventDefault();
         $(this).parent('div').remove();
         x1--;
-        localStorage.page2_id1 = (parseInt(localStorage.page2_id1)) - 1;
+        localStorage.page2_id1 = (parseInt (localStorage.page2_id1)) - 1;
     });
 
     var x2 = 1;
