@@ -28,7 +28,7 @@ function query1output(input) {
     var temp = input.split("&");
     var text =  "";
     for (var i = 0; i < temp.length; i++) {
-        text.append('<p>' + temp[i] + '<br>');
+        text += '<h3>' + temp[i] + '<br>';
     }
     $(wrapper).html(text);
 }
