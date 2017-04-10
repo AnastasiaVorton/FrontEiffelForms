@@ -23,7 +23,9 @@ function saveGrantsFields() {
     for (var i = 1; i < (parseInt(localStorage.page3_id1)); i++) {
         localStorage.setItem("title" + i, document.getElementById("title" + i).value);
         localStorage.setItem("agency" + i, document.getElementById("agency" + i).value);
-        localStorage.setItem("period" + i, document.getElementById("period" + i).value);
+        localStorage.setItem("startPeriod" + i, document.getElementById("startPeriod" + i).value);
+        localStorage.setItem("endPeriod" + i, document.getElementById("endPeriod" + i).value);
+        localStorage.setItem("continuation" + i, document.getElementById("continuation" + i).value);
         localStorage.setItem("amount" + i, document.getElementById("amount" + i).value);
     }
 }
@@ -32,7 +34,10 @@ function saveResearchFields() {
     for (var i = 1; i < (parseInt(localStorage.page3_id2)); i++) {
         localStorage.setItem("proj-title" + i, document.getElementById("proj-title" + i).value);
         localStorage.setItem("personnel" + i, document.getElementById("personnel" + i).value);
-        localStorage.setItem("dates" + i, document.getElementById("dates" + i).value);
+        localStorage.setItem("startDates" + i, document.getElementById("startDates" + i).value);
+        localStorage.setItem("endDates" + i, document.getElementById("endDates" + i).value);
+        localStorage.setItem("externalPersonnel" + i, document.getElementById("externalPersonnel" + i).value);
+        localStorage.setItem("financing" + i, document.getElementById("financing" + i).value);
     }
 }
 
@@ -47,7 +52,7 @@ function saveCollaborationsFields() {
 
 function saveConferencePublicationsFields() {
     for (var i = 1; i < (parseInt(localStorage.page3_id4)); i++) {
-        localStorage.setItem("stud-name" + i, document.getElementById("stud-name" + i).value);
+        // localStorage.setItem("stud-name" + i, document.getElementById("stud-name" + i).value);
         localStorage.setItem("publications" + i, document.getElementById("publications" + i).value);
     }
 }
@@ -64,13 +69,17 @@ function constructGrantsFields() {
         if (i == 1) {
             $("#title1").val(localStorage.getItem("title1"));
             $("#agency1").val(localStorage.getItem("agency1"));
-            $("#period1").val(localStorage.getItem("period1"));
+            $("#startPeriod1").val(localStorage.getItem("startPeriod1"));
+            $("#endPeriod1").val(localStorage.getItem("endPeriod1"));
+            $("#continuation1").val(localStorage.getItem("continuation1"));
             $("#amount1").val(localStorage.getItem("amount1"));
         } else {
-            $(wrapper1).append('<div><hr><p>Title: </p><input type="text" name="title' + i + '" id="title' + i + '"/> <p>Granting agency:</p><input type="text" name="agency' + i + '" id="agency' + i + '"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="text" name="period' + i + '" id="period' + i + '"> <p>Amount:</p><input type="number" name="amount' + i + '" id="amount' + i + '"></div>');
+            $(wrapper1).append('<div><hr><p>Title: </p><input type="text" name="title' + i + '" id="title' + i + '"/> <p>Granting agency:</p><input type="text" name="agency' + i + '" id="agency' + i + '"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="date" name="startPeriod' + i + '" id="startPeriod' + i + '"><input type="date" name="endPeriod' + i + '" id="endPeriod' + i + '"><p>Continuation of other grant:</p><input type="text" name="continuation1' + i + '" id="continuation1' + i + '"><p>Amount:</p><input type="number" name="amount' + i + '" id="amount' + i + '"></div>');
             $("#title" + i).val(localStorage.getItem("title" + i));
             $("#agency" + i).val(localStorage.getItem("agency" + i));
-            $("#period" + i).val(localStorage.getItem("period" + i));
+            $("#startPeriod" + i).val(localStorage.getItem("startPeriod" + i));
+            $("#endPeriod" + i).val(localStorage.getItem("endPeriod" + i));
+            $("#continuation" + i).val(localStorage.getItem("continuation" + i));
             $("#amount" + i).val(localStorage.getItem("amount" + i));
         }
     }
@@ -82,12 +91,18 @@ function constructResearchFields() {
         if (i == 1) {
             $("#proj-title1").val(localStorage.getItem("proj-title1"));
             $("#personnel1").val(localStorage.getItem("personnel1"));
-            $("#dates1").val(localStorage.getItem("dates1"));
+            $("#startDates1").val(localStorage.getItem("startDates1"));
+            $("#endDates1").val(localStorage.getItem("endDates1"));
+            $("#externalPersonnel1").val(localStorage.getItem("externalPersonnel1"));
+            $("#financing1").val(localStorage.getItem("financing1"));
         } else {
             $(wrapper2).append('<div><hr><p>Title:</p><input type="text" name="proj-title' + i + '" id="proj-title' + i + '"> <p>Personnel involved:</p><input type="text" name="personnel' + i + '" id="personnel' + i + '"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="text" name="dates' + i + '" id="dates' + i + '"></div> ');
             $("#proj-title" + i).val(localStorage.getItem("proj-title" + i));
             $("#personnel" + i).val(localStorage.getItem("personnel" + i));
-            $("#dates" + i).val(localStorage.getItem("dates" + i));
+            $("#startDates" + i).val(localStorage.getItem("startDates" + i));
+            $("#endDates" + i).val(localStorage.getItem("endDates" + i));
+            $("#externalPersonnel" + i).val(localStorage.getItem("externalPersonnel" + i));
+            $("#financing" + i).val(localStorage.getItem("financing" + i));
         }
     }
 }
@@ -114,11 +129,11 @@ function constructConferencePublicationsFields() {
     var wrapper4 = $(".conference-publications-wrap");
     for (var i = 1; i < (parseInt(localStorage.page3_id4)); i++) {
         if (i == 1) {
-            $("#stud-name1").val(localStorage.getItem("stud-name1"));
+            // $("#stud-name1").val(localStorage.getItem("stud-name1"));
             $("#publications1").val(localStorage.getItem("publications1"));
         } else {
-            $(wrapper4).append('<div><hr><p>Name of the student:</p><input type="text" name="stud-name' + i + '" id="stud-name' + i + '" size="40"> <p>Publications:</p><input type="text" name="publications' + i + '" id="publications' + i + '" size="40"></div>');
-            $("#stud-name" + i).val(localStorage.getItem("stud-name" + i));
+            $(wrapper4).append('<div><hr><p>Publications:</p><input type="text" name="publications' + i + '" id="publications' + i + '" size="40"></div>');
+            // $("#stud-name" + i).val(localStorage.getItem("stud-name" + i));
             $("#publications" + i).val(localStorage.getItem("publications" + i));
         }
     }
@@ -149,7 +164,8 @@ function fields1IsEmpty() {
     for (var i = 1; i < (parseInt(localStorage.page3_id1)); i++) {
         // alert(localStorage.getItem("title" + i) === "");
         if (localStorage.getItem("title" + i) === "" || localStorage.getItem("agency" + i) === "" ||
-            localStorage.getItem("period" + i) === "" || localStorage.getItem("amount" + i) === "") {
+            localStorage.getItem("startPeriod" + i) === "" || localStorage.getItem("endPeriod" + i) === "" ||
+            localStorage.getItem("continuation" + i) === "" || localStorage.getItem("amount" + i) === "") {
             return true;
         }
     }
@@ -159,7 +175,8 @@ function fields1IsEmpty() {
 function fields2IsEmpty() {
     for (var i = 1; i < (parseInt(localStorage.page3_id2)); i++) {
         if (localStorage.getItem("proj-title" + i) === "" || localStorage.getItem("personnel" + i) === "" ||
-            localStorage.getItem("dates" + i) === "") {
+            localStorage.getItem("startDates" + i) === "" || localStorage.getItem("endDates" + i) === "" ||
+            localStorage.getItem("externalPersonnel" + i) === "" || localStorage.getItem("financing" + i) === "") {
             return true;
         }
     }
@@ -227,7 +244,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x1 < max_fields) {
             x1++;
-            $(wrapper1).append('<div><hr><p>Title:</p><input type="text" name="title' + localStorage.page3_id1 + '" id="title' + localStorage.page3_id1 + '" size="40"> <p>Granting agency:</p><input type="text" name="agency' + localStorage.page3_id1 + '" id="agency' + localStorage.page3_id1 + '" size="40"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="text" name="period' + localStorage.page3_id1 + '" id="period' + localStorage.page3_id1 + '"size="40"> <p>Amount:</p><input type="number" name="amount' + localStorage.page3_id1 + '" id="amount' + localStorage.page3_id1 + '" size="40"><button class="remove_field1">Remove</button></div>');
+            $(wrapper1).append('<div><hr><p>Title:</p><input type="text" name="title' + localStorage.page3_id1 + '" id="title' + localStorage.page3_id1 + '" size="40"> <p>Granting agency:</p><input type="text" name="agency' + localStorage.page3_id1 + '" id="agency' + localStorage.page3_id1 + '" size="40"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="date" name="startPeriod' + localStorage.page3_id1 + '" id="startPeriod' + localStorage.page3_id1 + '"size="40"><input type="date" name="endPeriod' + localStorage.page3_id1 + '" id="endPeriod' + localStorage.page3_id1 + '"size="40"><p>Continuation of other grant:</p><input type="text" name="continuation' + localStorage.page3_id1 + '" id="contionuation' + localStorage.page3_id1 + '"size="40"><p>Amount:</p><input type="number" name="amount' + localStorage.page3_id1 + '" id="amount' + localStorage.page3_id1 + '" size="40"><button class="remove_field1">Remove</button></div>');
             localStorage.page3_id1 = (parseInt(localStorage.page3_id1)) + 1;
         }
     });
@@ -244,7 +261,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x2 < max_fields) {
             x2++;
-            $(wrapper2.append('<div><hr><p>Title:</p><input type="text" name="proj-title' + localStorage.page3_id2 + '" id="proj-title' + localStorage.page3_id2 + '" size="40"> <p>Personnel involved:</p><input type="text" name="personnel' + localStorage.page3_id2 + '" id="personnel' + localStorage.page3_id2 + '" size="40"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="text" name="dates' + localStorage.page3_id2 + '" id="dates' + localStorage.page3_id2 + '" size="40"><button class="remove_field2">Remove</button></div>'));
+            $(wrapper2.append('<div><hr><p>Title:</p><input type="text" name="proj-title' + localStorage.page3_id2 + '" id="proj-title' + localStorage.page3_id2 + '" size="40"> <p>Personnel involved:</p><input type="text" name="personnel' + localStorage.page3_id2 + '" id="personnel' + localStorage.page3_id2 + '" size="40"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="date" name="startDates' + localStorage.page3_id2 + '" id="startDates' + localStorage.page3_id2 + '" size="40"><input type="date" name="endDates' + localStorage.page3_id2 + '" id="endDates' + localStorage.page3_id2 + '" size="40"><p>External personnel involved:</p><input type="text" name="externalPersonnel' + localStorage.page3_id2 + '" id="externalPersonnel' + localStorage.page3_id2 + '" size="40"><p>Financing:</p><input type="text" name="financing' + localStorage.page3_id2 + '" id="financing' + localStorage.page3_id2 + '" size="40"><button class="remove_field2">Remove</button></div>'));
             localStorage.page3_id2 = (parseInt(localStorage.page3_id2)) + 1;
         }
     });
@@ -278,7 +295,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x4 < max_fields) {
             x4++;
-            $(wrapper4).append('<div> <p>Name of the student:</p><input type="text" name="stud-name' + localStorage.page3_id4 + '" id="stud-name' + localStorage.page3_id4 + '" size="40"> <p>Publications:</p><input type="text" name="publications' + localStorage.page3_id4 + '" id="publications' + localStorage.page3_id4 + '" size="40"><button class="remove_field4">Remove</button></div>');
+            $(wrapper4).append('<div><p>Publications:</p><input type="text" name="publications' + localStorage.page3_id4 + '" id="publications' + localStorage.page3_id4 + '" size="40"><button class="remove_field4">Remove</button></div>');
             localStorage.page3_id4 = (parseInt(localStorage.page3_id4)) + 1;
         }
     });
