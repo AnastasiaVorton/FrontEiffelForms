@@ -2,17 +2,17 @@ body {
     background-color: #b3e5fc;
 }
 
-.admin{
+.admin {
     background-color: #fffdff;
     box-shadow: 10px 10px #757575;
 }
 
-.form{
+.form {
     background-color: #fffdff;
     box-shadow: 10px 10px #757575;
 }
 
-.choose-nav{
+.choose-nav {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +25,7 @@ body {
 
 .admin, .form {
     text-align: center;
-    font-size: 40px ;
+    font-size: 40px;
     display: inline-block;
     padding: 30px;
     font-family: 'Josefin Sans', sans-serif;
@@ -44,12 +44,12 @@ h1 {
     font-weight: 100;
     font-family: 'Josefin Sans', sans-serif;
     color: #757575;
-    border-bottom: 1px solid ;
+    border-bottom: 1px solid;
     /*text-decoration: underline;*/
     /*text-decoration-style: solid;*/
 }
 
-.fields{
+.fields {
     position: absolute;
 }
 
@@ -85,16 +85,16 @@ button {
     padding: 16px;
 }
 
-.next-button:hover, .back-button:hover, .add-field-button1:hover,.add-field-button2:hover, .add-field-button3:hover,
+.next-button:hover, .back-button:hover, .add-field-button1:hover, .add-field-button2:hover, .add-field-button3:hover,
 .add-field-button4:hover, .admin-btn:hover, .form-btn:hover, .remove_field1:hover,
 .remove_field2:hover, .remove_field3:hover, .remove_field4:hover, .remove_field5:hover, .add-field-button5:hover,
-.submit-button:hover .query1-btn:hover, .query2-btn:hover, .query3-btn:hover, .loadQuery1:hover, .loadQuery2:hover
+.submit-button:hover, .query1-btn:hover, .query2-btn:hover, .query3-btn:hover, .loadQuery1:hover, .loadQuery2:hover
 .loadQuery3:hover {
     /*box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.12), 0 9px 25px 0 rgba(0, 0, 0, 0.10);*/
     box-shadow: 5px 5px #757575
 }
 
-.query1-btn, .query2-btn, .query3-btn{
+.query1-btn, .query2-btn, .query3-btn {
     margin-top: 16px;
 
 }
@@ -133,16 +133,16 @@ button {
     display: inline-block;
 }
 
-.submit-button{
+.submit-button {
 }
 
-.temp-page{
+.temp-page {
     background-color: #fffdff;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 40px ;
+    font-size: 40px;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
     color: #757575;
