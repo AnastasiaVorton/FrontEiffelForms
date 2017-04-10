@@ -56,14 +56,14 @@ $("#loadQuery2").on("click", function () {
 });
 
 function query2output(input) {
-    var temp = input.split("&");
+    var temp = input.split("/s/");
+    var out = "";
     for (var i = 0; i < temp.length; i++) {
-        var out = "";
-        var text = temp[i].split("/s/");
+        var text = temp[i].split("&");
         for (var j = 0; j < text.length; j++) {
             out += '<h3>' + text[j] + '<br>';
         }
-        out += '<br>'
+        out += '<br>';
     }
     $(wrapper2).html(out);
 }
@@ -90,10 +90,10 @@ $("#loadQuery3").on("click", function () {
 });
 
 function query3output(input) {
-    var temp = input.split("&");
+    var temp = input.split("/s/");
+    var out = "";
     for (var i = 0; i < temp.length; i++) {
-        var out = "";
-        var text = temp[i].split("/s/");
+        var text = temp[i].split("&");
         for (var j = 0; j < text.length; j++) {
             out += '<h3>' + text[j] + '<br>';
         }
