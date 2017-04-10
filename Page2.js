@@ -49,6 +49,7 @@ function saveStudentReportsFields() {
     for (var i = 1; i < (parseInt(localStorage.page2_id4)); i++) {
         localStorage.setItem("reportStudentName" + i, document.getElementById("reportStudentName" + i).value);
         localStorage.setItem("reportTitle" + i, document.getElementById("reportTitle" + i).value);
+        localStorage.setItem("publicationPlans" + i, document.getElementById("publicationPlans" + i).value);
     }
 }
 
@@ -119,10 +120,12 @@ function constructStudentReportsFields() {
         if (i == 1) {
             $("#reportStudentName1").val(localStorage.getItem("reportStudentName1"));
             $("#reportTitle1").val(localStorage.getItem("reportTitle1"));
+            $("#publicationPlans1").val(localStorage.getItem("publicationPlans1"));
         } else {
-            $(wrapper4).append('<div><hr><p>Student name:</p><input type="text"  name="reportStudentName' + i + '" id="reportStudentName' + i + '" size="40"> <p>Title:</p><input type="text"  name="reportTitle' + i + '" id="reportTitle' + i + '" size="40"><button class="remove_field4">Remove</button></div>');
+            $(wrapper4).append('<div><hr><p>Student name:</p><input type="text"  name="reportStudentName' + i + '" id="reportStudentName' + i + '" size="40"> <p>Title:</p><input type="text"  name="reportTitle' + i + '" id="reportTitle' + i + '" size="40"><p>Publication plans:</p><input type="text"  name="publicationPlans' + i + '" id="publicationPlans' + i + '"><button class="remove_field4">Remove</button></div>');
             $("#reportStudentName" + i).val(localStorage.getItem("reportStudentName" + i));
             $("#reportTitle" + i).val(localStorage.getItem("reportTitle" + i));
+            $("#publicationPlans" + i).val(localStorage.getItem("publicationPlans" + i));
         }
     }
 }
@@ -180,7 +183,8 @@ function field3isEmpty() {
 
 function field4isEmpty() {
     for (var i = 1; i < (parseInt(localStorage.page2_id4)); i++) {
-        if (localStorage.getItem("reportsStudentName" + i) === "" || localStorage.getItem("reportTitle" + i) === "") {
+        if (localStorage.getItem("reportsStudentName" + i) === "" || localStorage.getItem("reportTitle" + i) === "" ||
+        localStorage.getItem("publicationPlans" + i) === "") {
             return true;
         }
     }
@@ -217,15 +221,14 @@ $(document).ready(function () {
         saveFieldsPage2();
         if (checkFields()) {
             return;
-        } else
-            if (checkFields() === false)
-        $.ajax({
-            type: "POST",
-            url: "Page3.html",
-            success: function (html) {
-                $("#container-main-field").html(html);
-            }
-        });
+        } else if (checkFields() === false)
+            $.ajax({
+                type: "POST",
+                url: "Page3.html",
+                success: function (html) {
+                    $("#container-main-field").html(html);
+                }
+            });
     });
 
     $("#js-back-button").on("click", function () {
@@ -307,7 +310,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x4 < max_fields) {
             x4++;
-            $(wrapper4).append('<div><hr><p>Student name:</p><input type="text"  name="reportStudentName' + localStorage.page2_id4 + '" id="reportStudentName' + localStorage.page2_id4 + '" size="40"> <p>Title:</p><input type="text"  name="reportTitle' + localStorage.page2_id4 + '" id="reportTitle' + localStorage.page2_id4 + '" size="40"><button class="remove_field4">Remove</button></div>');
+            $(wrapper4).append('<div><hr><p>Student name:</p><input type="text"  name="reportStudentName' + localStorage.page2_id4 + '" id="reportStudentName' + localStorage.page2_id4 + '" size="40"> <p>Title:</p><input type="text"  name="reportTitle' + localStorage.page2_id4 + '" id="reportTitle' + localStorage.page2_id4 + '" size="40"><p>Publication plans:</p><input type="text"  name="publicationPlans' + localStorage.page2_id4 + '" id="publicationPlans' + localStorage.page2_id4 + '" size="40"><button class="remove_field4">Remove</button></div>');
             localStorage.page2_id4 = (parseInt(localStorage.page2_id4)) + 1;
         }
     });
