@@ -26,9 +26,11 @@ var wrapper = $(".query1-additional");
 
 function query1output(input) {
     var temp = input.split("&");
+    var text =  "";
     for (var i = 0; i < temp.length; i++) {
-        $(wrapper).html('<p>' + temp[i] + '<br>');
+        text.append('<p>' + temp[i] + '<br>');
     }
+    $(wrapper).html(text);
 }
 
 
