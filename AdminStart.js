@@ -79,7 +79,6 @@ $("#query3").on("click", function () {
 });
 
 $("#loadQuery3").on("click", function () {
-    alert(document.getElementById("query3StartSem").value);
     $.ajax({
         type: "POST",
         url: "/load/query3/" + document.getElementById("query3Lab").value + "&" + document.getElementById("query3StartYear").value + "&" + document.getElementById("query3StartSem").value + "&" + document.getElementById("query3FinalYear").value + "&" + document.getElementById("query3FinalSem").value,
