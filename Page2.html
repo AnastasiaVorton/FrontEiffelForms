@@ -5,25 +5,24 @@
     </div>
     <fieldset>
         <form id="myForm">
-            <h4 class="field-name">Courses taught<sup class="obligatory-sign">*</sup>
+            <h4 class="field-name">Courses taught<sup class="obligatory-sign">*</sup></h4>
                 <div class="field-info">
                     <p>Include all courses taught or co-taught by members of your unit.
                         For each list: course name, semester (Spring or Fall), level (Bachelor, master or PhD) and
                         approximate number of students.
                     </p>
                 </div>
-            </h4>
             <div class="input-fields-wrap1">
                 <div>
                     <p>Course name:</p><input type="text" name="courseName1" id="courseName1" size="40">
                     <p>Semester:</p>
-                    <select name="semester1" id="semester1">
+                    <select  class="semester" name="semester1" id="semester1">
                         <option disabled>Select semester:</option>
                         <option value="Fall">Fall</option>
                         <option selected value="Spring">Spring</option>
                     </select>
                     <p>Level:</p>
-                    <select name="level1" id="level1">
+                    <select class="level" name="level1" id="level1">
                         <option disabled>Select level:</option>
                         <option value="Bachelor">Bachelor</option>
                         <option selected value="Master">Master</option>
@@ -47,7 +46,7 @@
                 <div>
                     <p>Course name:</p><input type="text" name="courseNameExam1" id="courseNameExam1" size="40">
                     <p>Semester:</p>
-                    <select name="semesterExam1" id="semesterExam1">
+                    <select class="semesterExam" name="semesterExam1" id="semesterExam1">
                         <option disabled>Select semester:</option>
                         <option value="Fall">Fall</option>
                         <option selected value="Spring">Spring</option>
@@ -96,11 +95,11 @@
                 <div><p>Student name:</p><input type="text" name="PhDThesesStudentName1" id="PhDThesesStudentName1"
                                                 size="40">
                     <p>Degree:</p>
-                    <select name="PhDThesesDegree1" id="PhDThesesDegree1">
+                    <select class="PhDThesesDegree" name="PhDThesesDegree1" id="PhDThesesDegree1">
                         <option disabled>Select level:</option>
-                        <option value="PhD">PhD</option>
+                        <option selected value="PhD">PhD</option>
                         <option selected value="Dr.">Dr.</option>
-                        <option selected value="Sc.">Sc.</option>
+                        <option value="Sc.">Sc.</option>
                     </select>
                     <p>Name of supervisor:</p><input type="text" name="PhDThesesSupervisorName1"
                                                      id="PhDThesesSupervisorName1"
@@ -117,7 +116,7 @@
     </fieldset>
     <div class="container-buttons">
         <div class="back-button" id="js-back-button">
-            <button>Back</button>
+            <button >Back</button>
         </div>
         <div class="next-button" id="js-next-button">
             <button>Next</button>
