@@ -2,6 +2,11 @@ body {
     background-color: #b3e5fc;
 }
 
+a {
+    text-decoration: none;
+    color: #757575;
+}
+
 .admin {
     background-color: #fffdff;
     box-shadow: 10px 10px #757575;
@@ -10,6 +15,7 @@ body {
 .form {
     background-color: #fffdff;
     box-shadow: 10px 10px #757575;
+    margin-left: 25px;
 }
 
 .choose-nav {
@@ -75,6 +81,26 @@ input {
     border-bottom-color: #757575;
     width: 100%;
     padding-bottom: 8px;
+}
+
+/*.semester, .level, .semesterExam, .PhDThesesDegree{*/
+/*width: 200px;*/
+/*margin: 0 auto;*/
+/*padding: 10px 15px;*/
+/*background: #fffdff;*/
+/*outline: none;*/
+/*}*/
+
+select {
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    background: #fffdff;
+    outline: none;
+}
+
+.semester select {
+    border: 0px;
 }
 
 button {
@@ -147,4 +173,9 @@ button {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
     color: #757575;
+}
+
+.query1-btn, .query3-btn, .query2-btn {
+    font-size: 20px;
+    width: 100%;
 }
