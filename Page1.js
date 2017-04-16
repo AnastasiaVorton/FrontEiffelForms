@@ -22,11 +22,26 @@ function fieldsIsEmpty() {
     }
     return false;
 }
+
+function isFalseDate(){
+ var startDate = new Date(this.document.getElementById("startDate").value);
+ var endDate = new Date(this.document.getElementById("endDate").value);
+    if (startDate.getFullYear() < 2012 || endDate.getFullYear() < 2012 || startDate.getFullYear() > 2020
+    || endDate.getFullYear() > 2020){
+        alert("Dates must fit in the range 2012 - 2020");
+        return true;
+    }
+    return false;
+}
+
 $(document).ready(function () {
     loadFieldsPage1();
     $("#startDate").val("2016-01-01");
     $("#endDate").val("2016-12-31");
     $("#js-next-button").on("click", function () {
+        if (isFalseDate()){
+            return;
+        }
         saveFieldsPage1();
         if (fieldsIsEmpty()) {
             return;
