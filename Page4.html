@@ -1,4 +1,48 @@
 <style>@import "EFproject.css";</style>
-<div class="temp-page">
-    <p class="temp-text">To be continued...</p>
+<div class="section_name">
+    <h2>Section 4: technology transfer</h2>
+    <div class="section-info"><p>Covers patents, licenses and other technology transfer activities</p>
+    </div>
+    <fieldset>
+        <form id="myForm">
+            <h4 class="field-name">Patents</h4>
+            <div class="field-info">
+                <p>
+                    For each list: patents filed or otherwise submitted during the reported period. Indicate country
+                    of patent office.
+                </p>
+            </div>
+
+            <div class="patents-wrap">
+                <div>
+                    <p>Patent:</p><input type="text" name="patent1" id="patent1" size="40">
+                    <p>Country:</p><input type="text" name="country1" id="country1" size="40">
+                </div>
+            </div>
+            <button class="add-field-button1">Add new</button>
+            <h4 class="field-name">IP licensing (software or others)</h4>
+            <div class="field-info"><p>
+                For each list licenses granted.</p>
+            </div>
+            <div class="licenses-wrap">
+                <div>
+                    <p>License:</p><input type="text" name="licence1" id="licence1" size="40">
+                </div>
+            </div>
+            <button class="add-field-button2">Add new</button>
+        </form>
+    </fieldset>
+    <div class="container-buttons">
+        <div class="back-button" id="js-back-button">
+            <button>Back</button>
+        </div>
+        <!--<button class="submit-button" name="submit-button" id="submit-button">Submit form</button>-->
+        <div class="next-button" id="js-next-button" hidden>
+        <button>Next</button>
+        </div>
+    </div>
+
 </div>
+<!--JavaScript section-->
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script src="Page4.js"></script>

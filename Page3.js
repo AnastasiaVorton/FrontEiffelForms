@@ -194,7 +194,8 @@ function checkDatesPage3() {
 function isFalseGrantsDate() {
     for (var i = 1; i < (parseInt(localStorage.page3_id1)); i++) {
         var startDate = new Date(this.document.getElementById("startPeriod" + i).value);
-        if (startDate.getFullYear() < 2012) {
+        var endDate = new Date(this.document.getElementById("endPeriod" + i).value);
+        if (startDate.getFullYear() < 2012 || endDate.getFullYear() < 2012) {
             alert("Year must not be less than 2012");
             return true;
         }
@@ -205,7 +206,8 @@ function isFalseGrantsDate() {
 function isFalseResearchDate() {
     for (var i = 1; i < (parseInt(localStorage.page3_id2)); i++) {
         var startDate = new Date(this.document.getElementById("startDates" + i).value);
-        if (startDate.getFullYear() < 2012) {
+        var endDate = new Date(this.document.getElementById("endDates" + i).value);
+        if (startDate.getFullYear() < 2012 || endDate.getFullYear() < 2012) {
             alert("Year must not be less than 2012");
             return true;
         }
