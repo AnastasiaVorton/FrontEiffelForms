@@ -73,7 +73,7 @@ function constructGrantsFields() {
             $("#continuation1").val(localStorage.getItem("continuation1"));
             $("#amount1").val(localStorage.getItem("amount1"));
         } else {
-            $(wrapper1).append('<div><hr><p>Title: </p><input type="text" name="title' + i + '" id="title' + i + '"/> <p>Granting agency:</p><input type="text" name="agency' + i + '" id="agency' + i + '"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="date" name="startPeriod' + i + '" id="startPeriod' + i + '"><input type="date" name="endPeriod' + i + '" id="endPeriod' + i + '"><p>Continuation of other grant:</p><input type="text" name="continuation' + i + '" id="continuation' + i + '"><p>Amount:</p><input type="number" name="amount' + i + '" id="amount' + i + '"></div>');
+            $(wrapper1).append('<div><hr><p>Title: </p><input type="text" name="title' + i + '" id="title' + i + '"/> <p>Granting agency:</p><input type="text" name="agency' + i + '" id="agency' + i + '"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="date" name="startPeriod' + i + '" id="startPeriod' + i + '"><input type="date" name="endPeriod' + i + '" id="endPeriod' + i + '"><p>Continuation of other grant:</p><input type="text" name="continuation' + i + '" id="continuation' + i + '"><p>Amount:</p><input type="number" name="amount' + i + '" id="amount' + i + '"><button class="remove_field1">Remove</button></div>');
             $("#title" + i).val(localStorage.getItem("title" + i));
             $("#agency" + i).val(localStorage.getItem("agency" + i));
             $("#startPeriod" + i).val(localStorage.getItem("startPeriod" + i));
@@ -115,7 +115,7 @@ function constructCollaborationsFields() {
             $("#name-of-principal1").val(localStorage.getItem("name-of-principal1"));
             $("#nature1").val(localStorage.getItem("nature1"));
         } else {
-            $(wrapper3).append('<div><hr><p>Country:</p><input type="text" name="country' + i + '" id="country' + i + '" > <p>Name of institution:</p><input type="text" name="name' + i + '" id="name' + i + '" > <p>Name of principal contact</p><input type="text" name="name-of-principal' + i + '" id="name-of-principal' + i + '"> <p>Nature:</p><input type="text" name="nature' + i + '" id="nature' + i + '" ></div>');
+            $(wrapper3).append('<div><hr><p>Country:</p><input type="text" name="country' + i + '" id="country' + i + '" > <p>Name of institution:</p><input type="text" name="name' + i + '" id="name' + i + '" > <p>Name of principal contact</p><input type="text" name="name-of-principal' + i + '" id="name-of-principal' + i + '"> <p>Nature:</p><input type="text" name="nature' + i + '" id="nature' + i + '" ><button class="remove_field3">Remove</button></div>');
             $("#country" + i).val(localStorage.getItem("country" + i));
             $("#name" + i).val(localStorage.getItem("name" + i));
             $("#name-of-principal" + i).val(localStorage.getItem("principal" + i));
@@ -131,7 +131,7 @@ function constructConferencePublicationsFields() {
             // $("#stud-name1").val(localStorage.getItem("stud-name1"));
             $("#publications1").val(localStorage.getItem("publications1"));
         } else {
-            $(wrapper4).append('<div><hr><p>Publications:</p><input type="text" name="publications' + i + '" id="publications' + i + '" size="40"></div>');
+            $(wrapper4).append('<div><hr><p>Publications:</p><input type="text" name="publications' + i + '" id="publications' + i + '" size="40"><button class="remove_field4">Remove</button></div>');
             // $("#stud-name" + i).val(localStorage.getItem("stud-name" + i));
             $("#publications" + i).val(localStorage.getItem("publications" + i));
         }
@@ -144,7 +144,7 @@ function constructJournalPublicationsFields() {
         if (i == 1) {
             $("#journal-publications1").val(localStorage.getItem("journal-publications1"));
         } else {
-            $(wrapper5).append('<div><hr><p>Publications:</p><input type="text" name="journal-publications' + i + '" id="journal-publications' + i + '" size="40"></div>');
+            $(wrapper5).append('<div><hr><p>Publications:</p><input type="text" name="journal-publications' + i + '" id="journal-publications' + i + '" size="40"><button class="remove_field5">Remove</button></div>');
             $("#journal-publications" + i).val(localStorage.getItem("journal-publications" + i));
         }
     }
@@ -179,12 +179,43 @@ function fields2IsEmpty() {
             return true;
         }
     }
+
+    return false;
+}
+
+function checkDatesPage3() {
+    if (isFalseGrantsDate() || isFalseResearchDate()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isFalseGrantsDate() {
+    for (var i = 1; i < (parseInt(localStorage.page3_id1)); i++) {
+        var startDate = new Date(this.document.getElementById("startPeriod" + i).value);
+        if (startDate.getFullYear() < 2012) {
+            alert("Year must not be less than 2012");
+            return true;
+        }
+    }
+    return false;
+}
+
+function isFalseResearchDate() {
+    for (var i = 1; i < (parseInt(localStorage.page3_id2)); i++) {
+        var startDate = new Date(this.document.getElementById("startDates" + i).value);
+        if (startDate.getFullYear() < 2012) {
+            alert("Year must not be less than 2012");
+            return true;
+        }
+    }
     return false;
 }
 
 function serializedForm() {
     // alert(localStorage.getItem("formPage1")+"&"+localStorage.getItem("formPage2")+"&"+localStorage.getItem("formPage3")+"&coursesTaughtNum="+localStorage.page2_id1+"&examsNum="+localStorage.page2_id2+"&supervisedStudentsNum="+localStorage.page2_id3+"&studentReportsNum="+localStorage.page2_id4+"&phdThesesNum="+localStorage.page2_id5+"&grantsNum="+localStorage.page3_id1+"&researchProjectsNum="+localStorage.page3_id2+"&researchCollaborationsNum="+localStorage.page3_id3+"&confPublicationsNum="+localStorage.page3_id4+"&journalPublicationsNum="+localStorage.page3_id5);
-    return localStorage.getItem("formPage1")+"&"+localStorage.getItem("formPage2")+"&"+localStorage.getItem("formPage3")+"&coursesTaughtNum="+localStorage.page2_id1+"&examsNum="+localStorage.page2_id2+"&supervisedStudentsNum="+localStorage.page2_id3+"&studentReportsNum="+localStorage.page2_id4+"&phdThesesNum="+localStorage.page2_id5+"&grantsNum="+localStorage.page3_id1+"&researchProjectsNum="+localStorage.page3_id2+"&researchCollaborationsNum="+localStorage.page3_id3+"&confPublicationsNum="+localStorage.page3_id4+"&journalPublicationsNum="+localStorage.page3_id5;
+    return localStorage.getItem("formPage1") + "&" + localStorage.getItem("formPage2") + "&" + localStorage.getItem("formPage3") + "&coursesTaughtNum=" + localStorage.page2_id1 + "&examsNum=" + localStorage.page2_id2 + "&supervisedStudentsNum=" + localStorage.page2_id3 + "&studentReportsNum=" + localStorage.page2_id4 + "&phdThesesNum=" + localStorage.page2_id5 + "&grantsNum=" + localStorage.page3_id1 + "&researchProjectsNum=" + localStorage.page3_id2 + "&researchCollaborationsNum=" + localStorage.page3_id3 + "&confPublicationsNum=" + localStorage.page3_id4 + "&journalPublicationsNum=" + localStorage.page3_id5;
 }
 
 
@@ -205,23 +236,16 @@ $(document).ready(function () {
         localStorage.page3_id5 = 2;
     }
     constructFields();
-    $("#submit-button").on("click", function () {
-        if (checkFieldsPage3()) {
-            saveFieldsPage3();
+    $("#js-next-button").on("click", function () {
+        saveFieldsPage3();
+        if (checkFieldsPage3() | checkDatesPage3()) {
             return;
-        } else if (checkFieldsPage3() === false) {
+        } else {
             $.ajax({
                 type: "POST",
-                url: "/saveForm",
-                data: (serializedForm()),
-                success: function () {
-                    $.ajax({
-                        type: "POST",
-                        url: "Page4.html",
-                        success: function (html) {
-                            $("#container-main-field").html(html);
-                        }
-                    });
+                url: "Page4.html",
+                success: function (html) {
+                    $("#container-main-field").html(html);
                 }
             });
         }
