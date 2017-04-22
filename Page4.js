@@ -46,15 +46,11 @@ function constructLicencingFields() {
             $("#licence1").val(localStorage.getItem("licence1"));
         } else {
             $(wrapper2.append('<div> <p>License:</p><input type="text" name="licence' + i + '"  id="licence' + i + '"  size="40"><button class="remove_field2">Remove</button></div>'));
-            $("#proj-title" + i).val(localStorage.getItem("proj-title" + i));
-            $("#personnel" + i).val(localStorage.getItem("personnel" + i));
-            $("#startDates" + i).val(localStorage.getItem("startDates" + i));
-            $("#endDates" + i).val(localStorage.getItem("endDates" + i));
-            $("#externalPersonnel" + i).val(localStorage.getItem("externalPersonnel" + i));
-            $("#financing" + i).val(localStorage.getItem("financing" + i));
+            $("#licence" + i).val(localStorage.getItem("licence" + i));
         }
     }
 }
+
 $(document).ready(function () {
     if (localStorage.page4_id1 == null) {
         localStorage.page4_id1 = 2;
