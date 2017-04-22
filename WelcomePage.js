@@ -1,11 +1,19 @@
 /**
  * Created by Nastya on 28.03.2017.
  */
-// function funSuc(data) {
-//     $("#container-main-field").html(data);
-// }
 
 $(document).ready(function () {
+
+    $("#toStart").on("click", function () {
+        localStorage.clear();
+        $.ajax({
+            type: "POST",
+            url: "index.html",
+            success: function (html) {
+                $("body").html(html);
+            }
+        });
+    });
 
     $("#js-next-button").on("click", function () {
         $.ajax({
@@ -18,9 +26,6 @@ $(document).ready(function () {
     });
 });
 
-// $("#js-next-button").on("click", function () {
-//     $("#container-main-field").load("Page1.html");
-// });
 
 // $("#js-back-button").on("click", function () {
 //     $.ajax({
