@@ -4,8 +4,10 @@
 function loadFieldsPage1() {
     $("#unitName").val(localStorage.unitName);
     $("#headName").val(localStorage.headName);
-    $("#startDate").val(localStorage.startDate);
-    $("#endDate").val(localStorage.endDate);
+    if (localStorage.startDate != null)
+        $("#startDate").val(localStorage.startDate);
+    if (localStorage.endDate != null)
+        $("#endDate").val(localStorage.endDate);
 }
 
 function saveFieldsPage1() {
@@ -35,9 +37,9 @@ function isFalseDate(){
 }
 
 $(document).ready(function () {
-    loadFieldsPage1();
     $("#startDate").val("2016-01-01");
     $("#endDate").val("2016-12-31");
+    loadFieldsPage1();
     $("#js-next-button").on("click", function () {
         if (isFalseDate()){
             return;
