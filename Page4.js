@@ -15,7 +15,7 @@ function constructFields() {
 function savePatentsFields() {
     for (var i = 1; i < (parseInt(localStorage.page4_id1)); i++) {
         localStorage.setItem("patent" + i, document.getElementById("patent" + i).value);
-        localStorage.setItem("country" + i, document.getElementById("country" + i).value);
+        localStorage.setItem("patentCountry" + i, document.getElementById("patentCountry" + i).value);
     }
 }
 
@@ -32,7 +32,7 @@ function constructPatentsFields() {
             $("#patent1").val(localStorage.getItem("patent1"));
             $("#country1").val(localStorage.getItem("country1"));
         } else {
-            $(wrapper1).append('<div><p>Patent:</p><input type="text" name="patent' + i + '" id="patent' + i + '" size="40"> <p>Country:</p><input type="text" name="country' + i + '" id="country' + i + '" size="40"><button class="remove_field1">Remove</button></div>');
+            $(wrapper1).append('<div><p>Patent:</p><input type="text" name="patent' + i + '" id="patent' + i + '" size="40"> <p>Country:</p><input type="text" name="patentCountry' + i + '" id="patentCountry' + i + '" size="40"><button class="remove_field1">Remove</button></div>');
             $("#patent" + i).val(localStorage.getItem("patent" + i));
             $("#country" + i).val(localStorage.getItem("country" + i));
         }
@@ -94,7 +94,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x1 < max_fields) {
             x1++;
-            $(wrapper1).append('<div><hr><p>Patent:</p><input type="text" name="patent' + localStorage.page4_id1 + '"  id="patent' + localStorage.page4_id1 + '"  size="40"> <p>Country:</p><input type="text" name="country' + localStorage.page4_id1 + '" id="country' + localStorage.page4_id1 + '" size="40"><button class="remove_field1">Remove</button></div>');
+            $(wrapper1).append('<div><hr><p>Patent:</p><input type="text" name="patent' + localStorage.page4_id1 + '"  id="patent' + localStorage.page4_id1 + '"  size="40"> <p>Country:</p><input type="text" name="patentCountry' + localStorage.page4_id1 + '" id="patentCountry' + localStorage.page4_id1 + '" size="40"><button class="remove_field1">Remove</button></div>');
             localStorage.page4_id1 = (parseInt(localStorage.page4_id1)) + 1;
         }
     });
