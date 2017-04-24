@@ -24,7 +24,6 @@ function saveGrantsFields() {
         localStorage.setItem("title" + i, document.getElementById("title" + i).value);
         localStorage.setItem("agency" + i, document.getElementById("agency" + i).value);
         localStorage.setItem("startPeriod" + i, document.getElementById("startPeriod" + i).value);
-        localStorage.setItem("endPeriod" + i, document.getElementById("endPeriod" + i).value);
         localStorage.setItem("continuation" + i, document.getElementById("continuation" + i).value);
         localStorage.setItem("amount" + i, document.getElementById("amount" + i).value);
     }
@@ -69,15 +68,13 @@ function constructGrantsFields() {
             $("#title1").val(localStorage.getItem("title1"));
             $("#agency1").val(localStorage.getItem("agency1"));
             $("#startPeriod1").val(localStorage.getItem("startPeriod1"));
-            $("#endPeriod1").val(localStorage.getItem("endPeriod1"));
             $("#continuation1").val(localStorage.getItem("continuation1"));
             $("#amount1").val(localStorage.getItem("amount1"));
         } else {
-            $(wrapper1).append('<div><hr><p>Title: </p><input type="text" name="title' + i + '" id="title' + i + '"/> <p>Granting agency:</p><input type="text" name="agency' + i + '" id="agency' + i + '"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="date" name="startPeriod' + i + '" id="startPeriod' + i + '"><input type="date" name="endPeriod' + i + '" id="endPeriod' + i + '"><p>Continuation of other grant:</p><input type="text" name="continuation' + i + '" id="continuation' + i + '"><p>Amount:</p><input type="number" name="amount' + i + '" id="amount' + i + '"><button class="remove_field1">Remove</button></div>');
+            $(wrapper1).append('<div><hr><p>Title: </p><input type="text" name="title' + i + '" id="title' + i + '"/> <p>Granting agency:</p><input type="text" name="agency' + i + '" id="agency' + i + '"> <p>Period</p><input type="text" name="startPeriod' + i + '" id="startPeriod' + i + '"><p>Continuation of other grant:</p><input type="text" name="continuation' + i + '" id="continuation' + i + '"><p>Amount:</p><input type="number" name="amount' + i + '" id="amount' + i + '"><button class="remove_field1">Remove</button></div>');
             $("#title" + i).val(localStorage.getItem("title" + i));
             $("#agency" + i).val(localStorage.getItem("agency" + i));
             $("#startPeriod" + i).val(localStorage.getItem("startPeriod" + i));
-            $("#endPeriod" + i).val(localStorage.getItem("endPeriod" + i));
             $("#continuation" + i).val(localStorage.getItem("continuation" + i));
             $("#amount" + i).val(localStorage.getItem("amount" + i));
         }
@@ -161,10 +158,9 @@ function checkFieldsPage3() {
 
 function fields1IsEmpty() {
     for (var i = 1; i < (parseInt(localStorage.page3_id1)); i++) {
-        // alert(localStorage.getItem("title" + i) === "");
         if (localStorage.getItem("title" + i) === "" || localStorage.getItem("agency" + i) === "" ||
-            localStorage.getItem("startPeriod" + i) === "" || localStorage.getItem("endPeriod" + i) === "" ||
-            localStorage.getItem("continuation" + i) === "" || localStorage.getItem("amount" + i) === "") {
+            localStorage.getItem("startPeriod" + i) === "" || localStorage.getItem("continuation" + i) === ""
+            || localStorage.getItem("amount" + i) === "") {
             return true;
         }
     }
@@ -194,8 +190,7 @@ function checkDatesPage3() {
 function isFalseGrantsDate() {
     for (var i = 1; i < (parseInt(localStorage.page3_id1)); i++) {
         var startDate = new Date(this.document.getElementById("startPeriod" + i).value);
-        var endDate = new Date(this.document.getElementById("endPeriod" + i).value);
-        if (startDate.getFullYear() < 2012 || endDate.getFullYear() < 2012) {
+        if (startDate.getFullYear() < 2012 ) {
             alert("Year must not be less than 2012");
             return true;
         }
@@ -281,7 +276,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x1 < max_fields) {
             x1++;
-            $(wrapper1).append('<div><hr><p>Title:</p><input type="text" name="title' + localStorage.page3_id1 + '" id="title' + localStorage.page3_id1 + '" size="40"> <p>Granting agency:</p><input type="text" name="agency' + localStorage.page3_id1 + '" id="agency' + localStorage.page3_id1 + '" size="40"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="date" name="startPeriod' + localStorage.page3_id1 + '" id="startPeriod' + localStorage.page3_id1 + '"size="40"><input type="date" name="endPeriod' + localStorage.page3_id1 + '" id="endPeriod' + localStorage.page3_id1 + '"size="40"><p>Continuation of other grant:</p><input type="text" name="continuation' + localStorage.page3_id1 + '" id="continuation' + localStorage.page3_id1 + '"size="40"><p>Amount:</p><input type="number" name="amount' + localStorage.page3_id1 + '" id="amount' + localStorage.page3_id1 + '" size="40"><button class="remove_field1">Remove</button></div>');
+            $(wrapper1).append('<div><hr><p>Title:</p><input type="text" name="title' + localStorage.page3_id1 + '" id="title' + localStorage.page3_id1 + '" size="40"> <p>Granting agency:</p><input type="text" name="agency' + localStorage.page3_id1 + '" id="agency' + localStorage.page3_id1 + '" size="40"> <p>Period</p><input type="text" name="startPeriod' + localStorage.page3_id1 + '" id="startPeriod' + localStorage.page3_id1 + '"size="40"><p>Continuation of other grant:</p><input type="text" name="continuation' + localStorage.page3_id1 + '" id="continuation' + localStorage.page3_id1 + '"size="40"><p>Amount:</p><input type="number" name="amount' + localStorage.page3_id1 + '" id="amount' + localStorage.page3_id1 + '" size="40"><button class="remove_field1">Remove</button></div>');
             localStorage.page3_id1 = (parseInt(localStorage.page3_id1)) + 1;
         }
     });
