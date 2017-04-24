@@ -362,7 +362,7 @@ $(document).ready(function () {
             success: function (input) {
                 var select = $("#query7Lab");
                 var temp = input.split("&");
-                for (var i = 0; i < temp.length; i++) {
+                for (var i = 0; i < temp.length - 1; i++) {
                     select.append('<option value="' + temp[i] + '">' + temp[i] + ' </option>');
                 }
             }
