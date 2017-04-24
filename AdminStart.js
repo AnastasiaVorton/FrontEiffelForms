@@ -33,6 +33,17 @@ function invalidYearsQuery3() {
     }
 }
 
+function invalidYearsQuery7() {
+    var date1 = new Date(this.document.getElementById("query7InitDate").value);
+    var date2 = new Date(this.document.getElementById("query7FinalDate").value);
+    if (date1.getFullYear() < 2012 || date1.getFullYear() > 2016 || date2.getFullYear() < 2013 || date2.getFullYear() > 2017) {
+        alert("Year must not be less than 2012 or bigger than 2017!");
+        return true;
+    } else {
+        return false;
+    }
+}
+
 $(document).ready(function () {
 
     var wrapper1 = $(".query1-additional");
@@ -370,13 +381,17 @@ $(document).ready(function () {
     });
 
     $("#loadQuery7").on("click", function () {
-        $.ajax({
-            type: "POST",
-            url: "/load/query7/" + document.getElementById("query7Lab").value + "&" + document.getElementById("query7InitDate").value + "&" + document.getElementById("query7FinalDate").value,
-            success: function (result) {
-                query7output(result);
-            }
-        });
+        if (invalidYearsQuery7()) {
+            return;
+        } else {
+            $.ajax({
+                type: "POST",
+                url: "/load/query7/" + document.getElementById("query7Lab").value + "&" + document.getElementById("query7InitDate").value + "&" + document.getElementById("query7FinalDate").value,
+                success: function (result) {
+                    query7output(result);
+                }
+            });
+        }
     });
 
     function query7output(input) {
