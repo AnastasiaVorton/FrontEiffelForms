@@ -22,10 +22,6 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    /*margin: auto;*/
-    /*width: 50%;*/
-    /*border: none;*/
-    /*padding: 200px 200px 200px 200px;*/
     padding-top: 200px;
 }
 
@@ -52,8 +48,6 @@ h1 {
     font-family: 'Josefin Sans', sans-serif;
     color: #757575;
     border-bottom: 1px solid;
-    /*text-decoration: underline;*/
-    /*text-decoration-style: solid;*/
 }
 
 .fields {
@@ -63,8 +57,6 @@ h1 {
 fieldset {
     background-color: #fffdff;
     border: hidden;
-    /*margin-left: inherit;*/
-    /*margin-right: inherit;*/
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 100;
     color: #757575;
@@ -82,14 +74,6 @@ input {
     width: 100%;
     padding-bottom: 8px;
 }
-
-/*.semester, .level, .semesterExam, .PhDThesesDegree{*/
-/*width: 200px;*/
-/*margin: 0 auto;*/
-/*padding: 10px 15px;*/
-/*background: #fffdff;*/
-/*outline: none;*/
-/*}*/
 
 select {
     width: 200px;
