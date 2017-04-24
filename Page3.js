@@ -34,7 +34,6 @@ function saveResearchFields() {
         localStorage.setItem("proj-title" + i, document.getElementById("proj-title" + i).value);
         localStorage.setItem("personnel" + i, document.getElementById("personnel" + i).value);
         localStorage.setItem("startDates" + i, document.getElementById("startDates" + i).value);
-        localStorage.setItem("endDates" + i, document.getElementById("endDates" + i).value);
         localStorage.setItem("externalPersonnel" + i, document.getElementById("externalPersonnel" + i).value);
         localStorage.setItem("financing" + i, document.getElementById("financing" + i).value);
     }
@@ -88,7 +87,6 @@ function constructResearchFields() {
             $("#proj-title1").val(localStorage.getItem("proj-title1"));
             $("#personnel1").val(localStorage.getItem("personnel1"));
             $("#startDates1").val(localStorage.getItem("startDates1"));
-            $("#endDates1").val(localStorage.getItem("endDates1"));
             $("#externalPersonnel1").val(localStorage.getItem("externalPersonnel1"));
             $("#financing1").val(localStorage.getItem("financing1"));
         } else {
@@ -96,7 +94,6 @@ function constructResearchFields() {
             $("#proj-title" + i).val(localStorage.getItem("proj-title" + i));
             $("#personnel" + i).val(localStorage.getItem("personnel" + i));
             $("#startDates" + i).val(localStorage.getItem("startDates" + i));
-            $("#endDates" + i).val(localStorage.getItem("endDates" + i));
             $("#externalPersonnel" + i).val(localStorage.getItem("externalPersonnel" + i));
             $("#financing" + i).val(localStorage.getItem("financing" + i));
         }
@@ -201,8 +198,7 @@ function isFalseGrantsDate() {
 function isFalseResearchDate() {
     for (var i = 1; i < (parseInt(localStorage.page3_id2)); i++) {
         var startDate = new Date(this.document.getElementById("startDates" + i).value);
-        var endDate = new Date(this.document.getElementById("endDates" + i).value);
-        if (startDate.getFullYear() < 2012 || endDate.getFullYear() < 2012) {
+        if (startDate.getFullYear() < 2012 ) {
             alert("Year must not be less than 2012");
             return true;
         }
