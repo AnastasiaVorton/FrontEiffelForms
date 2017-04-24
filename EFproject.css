@@ -118,7 +118,6 @@ button {
 .submit-button:hover, .query1-btn:hover, .query2-btn:hover, .query3-btn:hover, .query4-btn:hover, .query5-btn:hover,
 .query6-btn:hover, .query7-btn:hover, .loadQuery1:hover, .loadQuery2:hover,
 .loadQuery3:hover, .loadQuery4:hover, .loadQuery5:hover, .loadQuery6:hover, .loadQuery7:hover{
-    /*box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.12), 0 9px 25px 0 rgba(0, 0, 0, 0.10);*/
     box-shadow: 5px 5px #757575
 }
 
