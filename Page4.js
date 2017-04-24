@@ -30,11 +30,11 @@ function constructPatentsFields() {
     for (var i = 1; i < (parseInt(localStorage.page4_id1)); i++) {
         if (i == 1) {
             $("#patent1").val(localStorage.getItem("patent1"));
-            $("#country1").val(localStorage.getItem("country1"));
+            $("#patentCountry1").val(localStorage.getItem("patentCountry1"));
         } else {
             $(wrapper1).append('<div><p>Patent:</p><input type="text" name="patent' + i + '" id="patent' + i + '" size="40"> <p>Country:</p><input type="text" name="patentCountry' + i + '" id="patentCountry' + i + '" size="40"><button class="remove_field1">Remove</button></div>');
             $("#patent" + i).val(localStorage.getItem("patent" + i));
-            $("#country" + i).val(localStorage.getItem("country" + i));
+            $("#patentCountry" + i).val(localStorage.getItem("patentCountry" + i));
         }
     }
 }
