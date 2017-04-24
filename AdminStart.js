@@ -142,6 +142,7 @@ $(document).ready(function () {
     }
 
     /*query3*/
+
     function loadLabs3() {
         $.ajax({
             type: "POST",
@@ -149,7 +150,7 @@ $(document).ready(function () {
             success: function (input) {
                 var select = $("#query3Lab");
                 var temp = input.split("&");
-                for (var i = 0; i < temp.length; i++) {
+                for (var i = 0; i < temp.length - 1; i++) {
                     select.append('<option value="' + temp[i] + '">' + temp[i] + ' </option>');
                 }
             }
@@ -203,7 +204,7 @@ $(document).ready(function () {
             success: function (input) {
                 var select = $("#query4Lab");
                 var temp = input.split("&");
-                for (var i = 0; i < temp.length; i++) {
+                for (var i = 0; i < temp.length - 1; i++) {
                     select.append('<option value="' + temp[i] + '">' + temp[i] + ' </option>');
                 }
             }
@@ -245,56 +246,53 @@ $(document).ready(function () {
     }
 
     /*query5*/
-    // function loadLabs5() {
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "/load/units/get",
-    //         success: function (input) {
-    //             var select = $("#query5Lab");
-    //             var temp = input.split("&");
-    //             for (var i = 0; i < temp.length; i++) {
-    //                 select.append('<option value="' + temp[i] + '">' + temp[i] + ' </option>');
-    //             }
-    //         }
-    //     });
-    // }
+    function loadLabs5() {
+        $.ajax({
+            type: "POST",
+            url: "/load/units/get",
+            success: function (input) {
+                var select = $("#query5Lab");
+                var temp = input.split("&");
+                for (var i = 0; i < temp.length - 1; i++) {
+                    select.append('<option value="' + temp[i] + '">' + temp[i] + ' </option>');
+                }
+            }
+        });
+    }
 
-    //TODO
-    // $("#query5").on("click", function () {
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "Query5.html",
-    //         success: function (html) {
-    //             $("#container-main-field").html(html);
-    //             loadLabs5();
-    //         }
-    //     });
-    // });
+    $("#query5").on("click", function () {
+        $.ajax({
+            type: "POST",
+            url: "Query5.html",
+            success: function (html) {
+                $("#container-main-field").html(html);
+                loadLabs5();
+            }
+        });
+    });
 
-    //TODO
-    // $("#loadQuery5").on("click", function () {
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "/load/query5/" + document.getElementById("query3Lab").value + "&" + document.getElementById("query3StartYear").value + "&" + document.getElementById("query3StartSem").value + "&" + document.getElementById("query3FinalYear").value + "&" + document.getElementById("query3FinalSem").value,
-    //         success: function (result) {
-    //             query5output(result);
-    //         }
-    //     });
-    // });
+    $("#loadQuery5").on("click", function () {
+        $.ajax({
+            type: "POST",
+            url: "/load/query5/" + document.getElementById("query5Lab").value,
+            success: function (result) {
+                query5output(result);
+            }
+        });
+    });
 
-    //TODO
-    // function query5output(input) {
-    //     var temp = input.split("/s/");
-    //     var out = "";
-    //     for (var i = 0; i < temp.length; i++) {
-    //         var text = temp[i].split("&");
-    //         for (var j = 0; j < text.length; j++) {
-    //             out += '<h3>' + text[j] + '<br>';
-    //         }
-    //         out += '<br>'
-    //     }
-    //     $(wrapper5).html(out);
-    // }
+    function query5output(input) {
+        var temp = input.split("/s/");
+        var out = "";
+        for (var i = 0; i < temp.length; i++) {
+            var text = temp[i].split("&");
+            for (var j = 0; j < text.length; j++) {
+                out += '<h3>' + text[j] + '<br>';
+            }
+            out += '<br>'
+        }
+        $(wrapper5).html(out);
+    }
 
     /*query6*/
     // function loadUnits6() {
