@@ -344,52 +344,52 @@ $(document).ready(function () {
     }
 
     /*query7*/
-    // function loadUnits7() {
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "/load/units/get",
-    //         success: function (input) {
-    //             var select = $("#query7Unit");
-    //             var temp = input.split("&");
-    //             for (var i = 0; i < temp.length; i++) {
-    //                 select.append('<option value="' + temp[i] + '">' + temp[i] + ' </option>');
-    //             }
-    //         }
-    //     });
-    // }
+    function loadUnits7() {
+        $.ajax({
+            type: "POST",
+            url: "/load/units/get",
+            success: function (input) {
+                var select = $("#query7Unit");
+                var temp = input.split("&");
+                for (var i = 0; i < temp.length; i++) {
+                    select.append('<option value="' + temp[i] + '">' + temp[i] + ' </option>');
+                }
+            }
+        });
+    }
 
-    // $("#query7").on("click", function () {
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "Query7.html",
-    //         success: function (html) {
-    //             $("#container-main-field").html(html);
-    //             loadUnits7();
-    //         }
-    //     });
-    // });
+    $("#query7").on("click", function () {
+        $.ajax({
+            type: "POST",
+            url: "Query7.html",
+            success: function (html) {
+                $("#container-main-field").html(html);
+                loadUnits7();
+            }
+        });
+    });
 
-    // $("#loadQuery7").on("click", function () {
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "/load/query7/" + document.getElementById("query3Lab").value + "&" + document.getElementById("query3StartYear").value + "&" + document.getElementById("query3StartSem").value + "&" + document.getElementById("query3FinalYear").value + "&" + document.getElementById("query3FinalSem").value,
-    //         success: function (result) {
-    //             query7output(result);
-    //         }
-    //     });
-    // });
+    $("#loadQuery7").on("click", function () {
+        $.ajax({
+            type: "POST",
+            url: "/load/query7/" + document.getElementById("query7Lab").value + "&" + document.getElementById("query7InitDate").value + "&" + document.getElementById("query7FinalDate").value,
+            success: function (result) {
+                query7output(result);
+            }
+        });
+    });
 
-    // function query7output(input) {
-    //     var temp = input.split("/s/");
-    //     var out = "";
-    //     for (var i = 0; i < temp.length; i++) {
-    //         var text = temp[i].split("&");
-    //         for (var j = 0; j < text.length; j++) {
-    //             out += '<h3>' + text[j] + '<br>';
-    //         }
-    //         out += '<br>'
-    //     }
-    //     $(wrapper7).html(out);
-    // }
+    function query7output(input) {
+        var temp = input.split("/s/");
+        var out = "";
+        for (var i = 0; i < temp.length; i++) {
+            var text = temp[i].split("&");
+            for (var j = 0; j < text.length; j++) {
+                out += '<h3>' + text[j] + '<br>';
+            }
+            out += '<br>'
+        }
+        $(wrapper7).html(out);
+    }
 });
 
