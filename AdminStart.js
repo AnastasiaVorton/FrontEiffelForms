@@ -295,53 +295,53 @@ $(document).ready(function () {
     }
 
     /*query6*/
-    // function loadUnits6() {
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "/load/units/get",
-    //         success: function (input) {
-    //             var select = $("#query6Unit");
-    //             var temp = input.split("&");
-    //             for (var i = 0; i < temp.length; i++) {
-    //                 select.append('<option value="' + temp[i] + '">' + temp[i] + ' </option>');
-    //             }
-    //         }
-    //     });
-    // }
+    function loadUnits6() {
+        $.ajax({
+            type: "POST",
+            url: "/load/units/get",
+            success: function (input) {
+                var select = $("#query6Unit");
+                var temp = input.split("&");
+                for (var i = 0; i < temp.length; i++) {
+                    select.append('<option value="' + temp[i] + '">' + temp[i] + ' </option>');
+                }
+            }
+        });
+    }
 
-    // $("#query6").on("click", function () {
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "Query6.html",
-    //         success: function (html) {
-    //             $("#container-main-field").html(html);
-    //             loadUnits6();
-    //         }
-    //     });
-    // });
+    $("#query6").on("click", function () {
+        $.ajax({
+            type: "POST",
+            url: "Query6.html",
+            success: function (html) {
+                $("#container-main-field").html(html);
+                loadUnits6();
+            }
+        });
+    });
 
-    // $("#loadQuery6").on("click", function () {
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "/load/query6/" + document.getElementById("query3Lab").value + "&" + document.getElementById("query3StartYear").value + "&" + document.getElementById("query3StartSem").value + "&" + document.getElementById("query3FinalYear").value + "&" + document.getElementById("query3FinalSem").value,
-    //         success: function (result) {
-    //             query6output(result);
-    //         }
-    //     });
-    // });
+    $("#loadQuery6").on("click", function () {
+        $.ajax({
+            type: "POST",
+            url: "/load/query6/" + document.getElementById("query6Unit").value,
+            success: function (result) {
+                query6output(result);
+            }
+        });
+    });
 
-    // function query6output(input) {
-    //     var temp = input.split("/s/");
-    //     var out = "";
-    //     for (var i = 0; i < temp.length; i++) {
-    //         var text = temp[i].split("&");
-    //         for (var j = 0; j < text.length; j++) {
-    //             out += '<h3>' + text[j] + '<br>';
-    //         }
-    //         out += '<br>'
-    //     }
-    //     $(wrapper6).html(out);
-    // }
+    function query6output(input) {
+        var temp = input.split("/s/");
+        var out = "";
+        for (var i = 0; i < temp.length; i++) {
+            var text = temp[i].split("&");
+            for (var j = 0; j < text.length; j++) {
+                out += '<h3>' + text[j] + '<br>';
+            }
+            out += '<br>'
+        }
+        $(wrapper6).html(out);
+    }
 
     /*query7*/
     // function loadUnits7() {
