@@ -92,7 +92,7 @@ function constructResearchFields() {
             $("#externalPersonnel1").val(localStorage.getItem("externalPersonnel1"));
             $("#financing1").val(localStorage.getItem("financing1"));
         } else {
-            $(wrapper2.append('<div><hr><p>Title:</p><input type="text" name="proj-title' + i + '" id="proj-title' + i + '" size="40"> <p>Personnel involved:</p><input type="text" name="personnel' + i + '" id="personnel' + i + '" size="40"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="date" name="startDates' + i + '" id="startDates' + i + '" size="40"><input type="date" name="endDates' + i + '" id="endDates' + i + '" size="40"><p>External personnel involved:</p><input type="text" name="externalPersonnel' + i + '" id="externalPersonnel' + i + '" size="40"><p>Financing:</p><input type="text" name="financing' + i + '" id="financing' + i + '" size="40"><button class="remove_field2">Remove</button></div>'));
+            $(wrapper2.append('<div><hr><p>Title:</p><input type="text" name="proj-title' + i + '" id="proj-title' + i + '" size="40"> <p>Personnel involved:</p><input type="text" name="personnel' + i + '" id="personnel' + i + '" size="40"> <p>Period</p><input type="date" name="startDates' + i + '" id="startDates' + i + '" size="40"><p>External personnel involved:</p><input type="text" name="externalPersonnel' + i + '" id="externalPersonnel' + i + '" size="40"><p>Financing:</p><input type="text" name="financing' + i + '" id="financing' + i + '" size="40"><button class="remove_field2">Remove</button></div>'));
             $("#proj-title" + i).val(localStorage.getItem("proj-title" + i));
             $("#personnel" + i).val(localStorage.getItem("personnel" + i));
             $("#startDates" + i).val(localStorage.getItem("startDates" + i));
@@ -170,8 +170,8 @@ function fields1IsEmpty() {
 function fields2IsEmpty() {
     for (var i = 1; i < (parseInt(localStorage.page3_id2)); i++) {
         if (localStorage.getItem("proj-title" + i) === "" || localStorage.getItem("personnel" + i) === "" ||
-            localStorage.getItem("startDates" + i) === "" || localStorage.getItem("endDates" + i) === "" ||
-            localStorage.getItem("externalPersonnel" + i) === "" || localStorage.getItem("financing" + i) === "") {
+            localStorage.getItem("startDates" + i) === "" || localStorage.getItem("externalPersonnel" + i) === "" ||
+            localStorage.getItem("financing" + i) === "") {
             return true;
         }
     }
@@ -208,11 +208,6 @@ function isFalseResearchDate() {
         }
     }
     return false;
-}
-
-function serializedForm() {
-    // alert(localStorage.getItem("formPage1")+"&"+localStorage.getItem("formPage2")+"&"+localStorage.getItem("formPage3")+"&coursesTaughtNum="+localStorage.page2_id1+"&examsNum="+localStorage.page2_id2+"&supervisedStudentsNum="+localStorage.page2_id3+"&studentReportsNum="+localStorage.page2_id4+"&phdThesesNum="+localStorage.page2_id5+"&grantsNum="+localStorage.page3_id1+"&researchProjectsNum="+localStorage.page3_id2+"&researchCollaborationsNum="+localStorage.page3_id3+"&confPublicationsNum="+localStorage.page3_id4+"&journalPublicationsNum="+localStorage.page3_id5);
-    return localStorage.getItem("formPage1") + "&" + localStorage.getItem("formPage2") + "&" + localStorage.getItem("formPage3") + "&coursesTaughtNum=" + localStorage.page2_id1 + "&examsNum=" + localStorage.page2_id2 + "&supervisedStudentsNum=" + localStorage.page2_id3 + "&studentReportsNum=" + localStorage.page2_id4 + "&phdThesesNum=" + localStorage.page2_id5 + "&grantsNum=" + localStorage.page3_id1 + "&researchProjectsNum=" + localStorage.page3_id2 + "&researchCollaborationsNum=" + localStorage.page3_id3 + "&confPublicationsNum=" + localStorage.page3_id4 + "&journalPublicationsNum=" + localStorage.page3_id5 + "&patentNum=" + localStorage.page4_id1 +"&licenceNum=" + localStorage.page4_id2;
 }
 
 
@@ -293,7 +288,7 @@ $(document).ready(function () {
         e.preventDefault();
         if (x2 < max_fields) {
             x2++;
-            $(wrapper2.append('<div><hr><p>Title:</p><input type="text" name="proj-title' + localStorage.page3_id2 + '" id="proj-title' + localStorage.page3_id2 + '" size="40"> <p>Personnel involved:</p><input type="text" name="personnel' + localStorage.page3_id2 + '" id="personnel' + localStorage.page3_id2 + '" size="40"> <p>Period(in format dd.mm.yyyy - dd.mm.yyyy)</p><input type="date" name="startDates' + localStorage.page3_id2 + '" id="startDates' + localStorage.page3_id2 + '" size="40"><input type="date" name="endDates' + localStorage.page3_id2 + '" id="endDates' + localStorage.page3_id2 + '" size="40"><p>External personnel involved:</p><input type="text" name="externalPersonnel' + localStorage.page3_id2 + '" id="externalPersonnel' + localStorage.page3_id2 + '" size="40"><p>Financing:</p><input type="text" name="financing' + localStorage.page3_id2 + '" id="financing' + localStorage.page3_id2 + '" size="40"><button class="remove_field2">Remove</button></div>'));
+            $(wrapper2.append('<div><hr><p>Title:</p><input type="text" name="proj-title' + localStorage.page3_id2 + '" id="proj-title' + localStorage.page3_id2 + '" size="40"> <p>Personnel involved:</p><input type="text" name="personnel' + localStorage.page3_id2 + '" id="personnel' + localStorage.page3_id2 + '" size="40"> <p>Period</p><input type="date" name="startDates' + localStorage.page3_id2 + '" id="startDates' + localStorage.page3_id2 + '" size="40"><p>External personnel involved:</p><input type="text" name="externalPersonnel' + localStorage.page3_id2 + '" id="externalPersonnel' + localStorage.page3_id2 + '" size="40"><p>Financing:</p><input type="text" name="financing' + localStorage.page3_id2 + '" id="financing' + localStorage.page3_id2 + '" size="40"><button class="remove_field2">Remove</button></div>'));
             localStorage.page3_id2 = (parseInt(localStorage.page3_id2)) + 1;
         }
     });
