@@ -142,7 +142,6 @@ $(document).ready(function () {
     }
 
     /*query3*/
-
     function loadLabs3() {
         $.ajax({
             type: "POST",
@@ -196,6 +195,7 @@ $(document).ready(function () {
     }
 
     /*query4*/
+
     function loadLabs4() {
         $.ajax({
             type: "POST",
