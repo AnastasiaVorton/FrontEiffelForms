@@ -311,7 +311,7 @@ $(document).ready(function () {
             type: "POST",
             url: "/load/units/get",
             success: function (input) {
-                var select = $("#query6Unit");
+                var select = $("#query7Unit");
                 var temp = input.split("&");
                 for (var i = 0; i < temp.length; i++) {
                     select.append('<option value="' + temp[i] + '">' + temp[i] + ' </option>');
