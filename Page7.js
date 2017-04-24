@@ -26,13 +26,13 @@ function serializedForm() {
 $(document).ready(function () {
     constructFields();
     $("#js-next-button").on("click", function () {
-        saveFieldsPage2();
+        saveFieldsPage7();
         if (checkFields()) {
             return;
         } else if (checkFields() === false)
             $.ajax({
                 type: "POST",
-                url: "Page3.html",
+                url: "Page6.html",
                 success: function (html) {
                     $("#container-main-field").html(html);
                 }
