@@ -3,8 +3,8 @@
  */
 function invalidYearsQuery1() {
     var date = new Date(this.document.getElementById("query1Year").value);
-    if (date.getFullYear() < 2012 || date.getFullYear() > 2017) {
-        alert("Year must not be less than 2012 or bigger than 2017!");
+    if (date.getFullYear() < 2012 || date.getFullYear() > 2020) {
+        alert("Year must not be less than 2012 or bigger than 2020!");
         return true;
     } else {
         return false;
@@ -407,4 +407,3 @@ $(document).ready(function () {
         $(wrapper7).html(out);
     }
 });
-

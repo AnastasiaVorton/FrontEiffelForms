@@ -4,10 +4,12 @@
 function loadFieldsPage1() {
     $("#unitName").val(localStorage.unitName);
     $("#headName").val(localStorage.headName);
-    if (localStorage.startDate != null)
+    if (localStorage.startDate != null) {
         $("#startDate").val(localStorage.startDate);
-    if (localStorage.endDate != null)
+    }
+    if (localStorage.endDate != null) {
         $("#endDate").val(localStorage.endDate);
+    }
 }
 
 function saveFieldsPage1() {
@@ -25,12 +27,22 @@ function fieldsIsEmpty() {
     return false;
 }
 
-function isFalseDate(){
- var startDate = new Date(this.document.getElementById("startDate").value);
- var endDate = new Date(this.document.getElementById("endDate").value);
+function isFalseDate() {
+    var startDate = new Date(this.document.getElementById("startDate").value);
+    var endDate = new Date(this.document.getElementById("endDate").value);
     if (startDate.getFullYear() < 2012 || endDate.getFullYear() < 2012 || startDate.getFullYear() > 2020
-    || endDate.getFullYear() > 2020){
+        || endDate.getFullYear() > 2020) {
         alert("Dates must fit in the range 2012 - 2020");
+        return true;
+    }
+    return false;
+}
+
+function isFalseYear(){
+    var startDate = new Date(this.document.getElementById("startDate").value);
+    var endDate = new Date(this.document.getElementById("endDate").value);
+    if (endDate.getFullYear() - startDate.getFullYear() > 1){
+        alert("The report must cover a period of one year")
         return true;
     }
     return false;
@@ -41,7 +53,7 @@ $(document).ready(function () {
     $("#endDate").val("2016-12-31");
     loadFieldsPage1();
     $("#js-next-button").on("click", function () {
-        if (isFalseDate()){
+        if (isFalseDate() || isFalseYear()) {
             return;
         }
         saveFieldsPage1();
