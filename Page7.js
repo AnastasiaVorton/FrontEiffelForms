@@ -25,18 +25,15 @@ function serializedForm() {
 
 $(document).ready(function () {
     constructFields();
-    $("#js-next-button").on("click", function () {
+    $("#js-back-button").on("click", function () {
         saveFieldsPage7();
-        if (checkFields()) {
-            return;
-        } else if (checkFields() === false)
-            $.ajax({
-                type: "POST",
-                url: "Page6.html",
-                success: function (html) {
-                    $("#container-main-field").html(html);
-                }
-            });
+        $.ajax({
+            type: "POST",
+            url: "Page6.html",
+            success: function (html) {
+                $("#container-main-field").html(html);
+            }
+        });
     });
 
     $("#submit-button").on("click", function () {
@@ -46,7 +43,7 @@ $(document).ready(function () {
             url: "/saveForm",
             data: (serializedForm()),
             success: function () {
-                // localStorage.clear();
+                localStorage.clear();
                 $.ajax({
                     type: "POST",
                     url: "FinalPage.html",
